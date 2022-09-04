@@ -7,4 +7,4 @@ handle = gui.FindWindow(0, '***')
 for i in range(100):
     gui.SendMessage(handle, con.WM_PASTE)
     gui.SendMessage(handle, con.WM_KEYDOWN, con.VK_RETURN)
-    time.sleep(0.5)
+    time.sleep(1)
