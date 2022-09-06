@@ -108,12 +108,14 @@
 
 
 **string(字符串类型)**
+
     主要用来显示文字内容.表现形式为用一对引号
     (单',双",反`)包裹起来的数据
         let 变量名 = '字符'
         let 变量名 = "字符"
 
 **boolean(布尔类型)**
+
     主要用于逻辑判断,只有两个值true/false
         let 变量名 = true/false
         let is_login = true
@@ -126,6 +128,7 @@
 		console.log(`我叫${name}`)
 
 **undefined(未定义)**
+
     undefined既是类型,也可以作为值.指的就是未定义的意思.当你声明变量未赋值时,它的值为undefined
         let demo
         console.log(demo, typeof demo)
