@@ -25,12 +25,12 @@ void fun(float *p, float *q, float *s)
 main()
 {
     float a,b,c;
-    printf("请输入三个小数a、b、和c:");
+    printf("");
     scanf("%f%f%f",&a,&b,&c);
-    printf("这三个数分别为：");
+    printf("");
     printf("a=%4.1f,b=%4.1f,c=%4.1f\n\n",a,b,c);
     fun(&a,&b,&c);
-    printf("按从大到小排序后这三个数为：");
+    printf("");
     printf("a=%4.1f,b=%4.1f,c=%4.1f\n\n",a,b,c);
     system("pause");
 }

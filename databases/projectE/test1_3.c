@@ -31,11 +31,11 @@ main()
                 {"A10",71}
                 },m;
     int i;
-    printf("*********原始数据为*********\n");
+    printf("******************\n");
     for(i=0;i<N;i++)
-        printf("学号=%s 成绩=%d\n",a[i].num,a[i].s);
+        printf("=%s =%d\n",a[i].num,a[i].s);
     fun(a,&m);
-    printf("***********结果为**********\n");
-    printf("最低分学生学号为:%s,成绩为%d\n",m.num,m.s);
+    printf("********************\n");
+    printf(":%s,%d\n",m.num,m.s);
     system("pause");
 }
