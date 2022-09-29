@@ -18,7 +18,7 @@ class App:
         self.mac = ''
         self.s = ''
         self.user = 'username:'+ self.username+ 'password:'+ self.password+ 'mac:'+ self.mac + 'statu:200select:1'
-        
+    # statu:状态码 当值为200时启动程序直接登录 否则启动修改用户界面
         self.w=width
         self.h=height
         self.title='wifi'
@@ -40,7 +40,6 @@ class App:
             print(self.password)
             print(self.mac)
             self.loin()
-
         
         # Frame空间
         frameuser = tk.Frame(self.root)
@@ -168,7 +167,6 @@ def link(username, password, mac, select):
     if "此IP已在线请下线后再认证" in req:
         ToastNotifier().show_toast(title="该设备已经登录",
                                     msg="校园网状态",
-                                    #    icon_path=already_icon,
                                     duration=3,
                                     threaded=False)
         user = 'username:' + username + 'password:' + password +'mac:' + mac + 'statu:200' + 'select:'+ select
@@ -180,7 +178,6 @@ def link(username, password, mac, select):
     elif "认证成功" in req:
         ToastNotifier().show_toast(title="登录成功",
                                     msg="校园网状态",
-                                    #    icon_path=success_icon,
                                     duration=3,
                                     threaded=False)
         user = 'username:' + username + 'password:' + password +'mac:' + mac + 'statu:200' + 'select:' + select
@@ -192,7 +189,6 @@ def link(username, password, mac, select):
     else:
         ToastNotifier().show_toast(title="未连接到校园网,或出现其它问题",
                                     msg="校园网状态",
-                                    #    icon_path=unknown_icon,
                                     duration=1,
                                     threaded=False)
         user = 'username:' + username + 'password:' + password +'mac:' + mac + 'statu:400' + 'select:' + select  
