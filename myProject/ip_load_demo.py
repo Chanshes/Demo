@@ -251,8 +251,8 @@ if __name__ == '__main__':
         select = r.group(5)
         f.close()
 
-    # if(statu == '200'):
-    #     link(username, password, mac, select)
-    # else:
+    if(statu == '200'):
+        link(username, password, mac, select)
+    else:
         app = App()
         app.loop()
