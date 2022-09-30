@@ -45,18 +45,31 @@ class App:
         frameuser = tk.Frame(self.root)
         framein = tk.Frame(self.root)
 
+        # 菜单
+        menu = tk.Menu(self.root)
+        self.root.config(menu=menu)
+        helpmenu = tk.Menu(menu, tearoff=0)
+        aboutmenu = tk.Menu(menu, tearoff=0)
+
+        menu.add_cascade(label='帮助', menu=helpmenu)
+        helpmenu.add_command(label='我的MAC在哪', command=self.macHelp)
+        menu.add_cascade(label='关于', menu=aboutmenu)
+        aboutmenu.add_command(label='作者的话:', command=self.authorWord)
+        aboutmenu.add_command(label='关于此程序', command=self.aboutApp)
+
+
         # 定义控件内容
-        lu = tk.Label(frameuser, text='学号: ', padx=10,pady=10)
+        lu = tk.Label(frameuser, text='学号/工号: ', padx=10,pady=10, font=('楷体',15))
         euser = tk.Entry(frameuser)
-        lp = tk.Label(frameuser, text='密码: ' ,padx=10,pady=10)
+        lp = tk.Label(frameuser, text='密码: ' , padx=10, pady=10, font=('楷体',15))
         epass = tk.Entry(frameuser)
-        lm = tk.Label(frameuser, text='mac: ', padx=10, pady=10)
+        lm = tk.Label(frameuser, text='MAC: ', padx=10, pady=10, font=('楷体',15))
         emac = tk.Entry(frameuser)
 
         group = tk.Label(framein, text='网络通道：', padx=10, pady=10)
         tb1 = tk.Radiobutton(framein, text='WiFi', variable=self.v, value=1,width=10, height=3)
         tb2 = tk.Radiobutton(framein, text='网线', variable=self.v, value=2, width=10, height=3)
-        enter = tk.Button(framein, text='保存',relief=tk.RAISED,width=4,height=1,command=geten)
+        enter = tk.Button(framein, text='保存',relief=tk.RAISED,width=4,height=1, font=('楷体', 12), fg='Purple', command=geten)
         if(self.s == '1'):
             tb1.select()
         else:
@@ -70,16 +83,16 @@ class App:
         # 控件布局
         frameuser.pack()
         framein.pack()
-        lu.grid(row=0,column=0)
-        euser.grid(row=0,column=1)
-        lp.grid(row=1, column=0)
-        epass.grid(row=1,column=1)
-        lm.grid(row=2,column=0)
-        emac.grid(row=2,column=1)
-        group.grid(row=0,column=0)
-        tb1.grid(row=0,column=1)
-        tb2.grid(row=0,column=2)
-        enter.grid(row=2,column=1)      
+        lu.grid(row=1,column=0)
+        euser.grid(row=1,column=1)
+        lp.grid(row=2, column=0)
+        epass.grid(row=2,column=1)
+        lm.grid(row=3,column=0)
+        emac.grid(row=3,column=1)
+        group.grid(row=1,column=0)
+        tb1.grid(row=1,column=1)
+        tb2.grid(row=1,column=2)
+        enter.grid(row=3,column=1)      
    
     # 窗口跳转
     def loin(self):
@@ -127,6 +140,14 @@ class App:
             
             f.close()
 
+    # 帮助
+    def macHelp(self):
+        msbox.showinfo(title='我的MAC在哪？', message='方法一:打开校园网登录网站，浏览器地址栏中有mac=00:00:ab:cd:ef:00\n方法二: 打开网络和Internet设置，点击属性，属性的最后一栏即物理地址(MAC)')
+    
+    def authorWord(self):
+        msbox.showinfo(title='作者的话', message='该程序只作为校园网一键登录app，我在Github将源码分享 ---Github:https://github.com/Chanshes/Demo/tree/main/myProject')
+    def aboutApp(self):
+        msbox.showinfo(title='使用方法', message='初次进入时会生成user-agent文件账号密码会保存在这个文件夹中,注意不要删除\n在程序填写保存后再次打开程序即可进行自动登录,若将WiFi和网线选择错误会误报登录成功,需要进入user-agent文件手动将状态码修改为400,保存后打开程序弹出修改用户账号界面')
 
 
 def get_ip():
@@ -223,6 +244,7 @@ if __name__ == '__main__':
         statu = r.group(4)
         select = r.group(5)
         f.close()
+
     if(statu == '200'):
         link(username, password, mac, select)
     else:
