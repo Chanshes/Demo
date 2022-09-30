@@ -12,7 +12,7 @@ import requests
 import socket
 
 class App:
-    def __init__(self,width=500,height=300):
+    def __init__(self,width=400,height=260):
         self.username = ''
         self.password = ''
         self.mac = ''
@@ -226,10 +226,16 @@ if __name__ == '__main__':
     if not os.path.exists(b):    #判断当前路径是否存在，没有则创建新文件夹
         os.makedirs(b)
         xo = b + '/user-agent.txt'  #在当前py文件所在路径下的document文件中创建txt
+        he = b + '/help.txt'
         file = open(xo,'w')
         useragent = 'username:password:mac:statu:400select:1'
         file.write(useragent)   #写入内容信息
         file.close()
+        file.open(he, 'w')
+        strhelp = '初次进入时会生成user-agent文件账号密码会保存在这个文件夹中,注意不要删除\n在程序填写保存后再次打开程序即可进行自动登录,若将WiFi和网线选择错误会误报登录成功,需要进入user-agent文件手动将状态码修改为400,保存后打开程序弹出修改用户账号界面'
+        file.write(strhelp)
+        file.close()
+
     # 读取内容
     with open(os.getcwd()+'\\document-link\\user-agent.txt','r') as f:
         struser = f.read()
@@ -245,8 +251,8 @@ if __name__ == '__main__':
         select = r.group(5)
         f.close()
 
-    if(statu == '200'):
-        link(username, password, mac, select)
-    else:
+    # if(statu == '200'):
+    #     link(username, password, mac, select)
+    # else:
         app = App()
         app.loop()
