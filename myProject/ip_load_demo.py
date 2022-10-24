@@ -159,7 +159,7 @@ class App:
             struser = f.read()
             print(struser)
             r = re.search(
-                'username:(\d*)password:(.*)mac:(.*)statu:(.*)select:(.*)',
+                'username:(\\d*)password:(.*)mac:(.*)statu:(.*)select:(.*)',
                 struser)
             self.username = r.group(1)
             print('username:' + self.username)
@@ -238,41 +238,42 @@ def link(username, password, mac, select):
         r = requests.post(login_IP, data=dat, headers=headers)
         r.encoding = r.apparent_encoding
         req = r.text
-    except:
-        req = 'False'
+    finally:
+        if "此IP已在线请下线后再认证" in req:
+            ToastNotifier().show_toast(title="该设备已经登录",
+                                       msg="校园网状态",
+                                       duration=3,
+                                       threaded=False)
+            user = 'username:' + username + 'password:' + password + 'mac:' + mac + 'statu:200' + 'select:' + select
+            with open(os.getcwd() + '\\document-link\\user-agent.txt',
+                      'wb') as f:
+                f.write(user.encode('utf-8'))
+                f.close()
+            os._exit(0)
 
-    if "此IP已在线请下线后再认证" in req:
-        ToastNotifier().show_toast(title="该设备已经登录",
-                                   msg="校园网状态",
-                                   duration=3,
-                                   threaded=False)
-        user = 'username:' + username + 'password:' + password + 'mac:' + mac + 'statu:200' + 'select:' + select
-        with open(os.getcwd() + '\\document-link\\user-agent.txt', 'wb') as f:
-            f.write(user.encode('utf-8'))
-            f.close()
-        os._exit(0)
+        elif "认证成功" in req:
+            ToastNotifier().show_toast(title="登录成功",
+                                       msg="校园网状态",
+                                       duration=3,
+                                       threaded=False)
+            user = 'username:' + username + 'password:' + password + 'mac:' + mac + 'statu:200' + 'select:' + select
+            with open(os.getcwd() + '\\document-link\\user-agent.txt',
+                      'wb') as f:
+                f.write(user.encode('utf-8'))
+                f.close()
+            os._exit(0)
 
-    elif "认证成功" in req:
-        ToastNotifier().show_toast(title="登录成功",
-                                   msg="校园网状态",
-                                   duration=3,
-                                   threaded=False)
-        user = 'username:' + username + 'password:' + password + 'mac:' + mac + 'statu:200' + 'select:' + select
-        with open(os.getcwd() + '\\document-link\\user-agent.txt', 'wb') as f:
-            f.write(user.encode('utf-8'))
-            f.close()
-        os._exit(0)
-
-    else:
-        ToastNotifier().show_toast(title="未连接到校园网,或出现其它问题",
-                                   msg="校园网状态",
-                                   duration=1,
-                                   threaded=False)
-        user = 'username:' + username + 'password:' + password + 'mac:' + mac + 'statu:400' + 'select:' + select
-        with open(os.getcwd() + '\\document-link\\user-agent.txt', 'wb') as f:
-            f.write(user.encode('utf-8'))
-            f.close()
-        os._exit(0)
+        else:
+            ToastNotifier().show_toast(title="未连接到校园网,或出现其它问题",
+                                       msg="校园网状态",
+                                       duration=1,
+                                       threaded=False)
+            user = 'username:' + username + 'password:' + password + 'mac:' + mac + 'statu:400' + 'select:' + select
+            with open(os.getcwd() + '\\document-link\\user-agent.txt',
+                      'wb') as f:
+                f.write(user.encode('utf-8'))
+                f.close()
+            os._exit(0)
 
 
 if __name__ == '__main__':
@@ -300,7 +301,7 @@ if __name__ == '__main__':
         struser = f.read()
         # print(struser)
         r = re.search(
-            'username:(\d*)password:(.*)mac:(.*)statu:(.*)select:(.*)',
+            'username:(\\d*)password:(.*)mac:(.*)statu:(.*)select:(.*)',
             struser)
         username = r.group(1)
         # print('username:'+self.username)
