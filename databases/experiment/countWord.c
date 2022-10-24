@@ -2,7 +2,7 @@
 # include <windows.h>
 
 int main(){
-    printf("ÄãºÃ!\n");
+    printf("ä½ å¥½!\n");
     system("pause");
     return 0;
 }

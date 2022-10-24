@@ -13,25 +13,25 @@ struct student
 
 int main()
 {
-	// Ò»¸ö°àÉÏÓĞ30ÃûÑ§Éú£¬Ã¿¸öÑ§ÉúµÄÊı¾İ×÷ÎªÒ»¸ö¼ÇÂ¼£¬Ã¿¸ö¼ÇÂ¼°üÀ¨Ñ§ºÅ¡¢ĞÕÃû¡¢ÈıÃÅ¿Î³Ì¼°Æ½¾ù³É¼¨,ÒªÇó´òÓ¡ÈıÃÅ¿Î³ÌÆ½¾ù³É¼¨×î¸ß·ÖµÄÑ§Éú¼ÇÂ¼
+	// ä¸€ä¸ªç­ä¸Šæœ‰30åå­¦ç”Ÿï¼Œæ¯ä¸ªå­¦ç”Ÿçš„æ•°æ®ä½œä¸ºä¸€ä¸ªè®°å½•ï¼Œæ¯ä¸ªè®°å½•åŒ…æ‹¬å­¦å·ã€å§“åã€ä¸‰é—¨è¯¾ç¨‹åŠå¹³å‡æˆç»©,è¦æ±‚æ‰“å°ä¸‰é—¨è¯¾ç¨‹å¹³å‡æˆç»©æœ€é«˜åˆ†çš„å­¦ç”Ÿè®°å½•
 	int i, j;
 	struct student stu[30];
 	int amax = 0;
 	int index = 0;
 	for(i = 1; i <= 30; i++){
-		printf("ÇëÊäÈëµÚ%d¸öÑ§ÉúµÄĞÅÏ¢: (ĞÕÃû+Ñ§ºÅ+³É¼¨)\n",i);
+		printf("è¯·è¾“å…¥ç¬¬%dä¸ªå­¦ç”Ÿçš„ä¿¡æ¯: (å§“å+å­¦å·+æˆç»©)\n",i);
 		scanf("%s%d%d%d%d", &stu[i].name, &stu[i].id, &stu[i].Chinese, &stu[i].Math, &stu[i].English);
-		printf("Ñ§Éú:%s, Ñ§ºÅ: %d\n",stu[i].name, stu[i].id);
+		printf("å­¦ç”Ÿ:%s, å­¦å·: %d\n",stu[i].name, stu[i].id);
 		printf("Chinese: %d , Math: %d, English: %d \n",stu[i].Chinese,stu[i].Math,stu[i].English);
 		stu[i].average = (stu[i].Chinese+stu[i].Math+stu[i].English)/3;
-		printf("Æ½¾ù³É¼¨: %f\n", stu[i].average);
+		printf("å¹³å‡æˆç»©: %f\n", stu[i].average);
 		if(stu[i].average > amax){
 			amax = stu[i].average;
 			index = i;
 		}
 	}
-	printf("Æ½¾ù·Ö×î¸ß·ÖÎª%d",amax);
-	printf("Ñ§Éú£º%s,Ñ§ºÅ: %d\n",stu[index].name, stu[index].id);
+	printf("å¹³å‡åˆ†æœ€é«˜åˆ†ä¸º%d",amax);
+	printf("å­¦ç”Ÿï¼š%s,å­¦å·: %d\n",stu[index].name, stu[index].id);
 	printf("Chinese: %d , Math: %d, English: %d \n",stu[index].Chinese,stu[index].Math,stu[index].English);
 	return 0;
 }
