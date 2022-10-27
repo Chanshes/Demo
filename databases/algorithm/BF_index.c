@@ -1,4 +1,9 @@
-#define MAXLEN = 1024
+#define MAXLEN 1024
+struct StringType
+{
+    char str[MAXLEN];
+    int Len;
+}StringType;
 
 int BF(const char s[],const char t[])
 {
@@ -13,7 +18,7 @@ int BF(const char s[],const char t[])
         {index++,i=index,j=0;}
     }
     if(t[j]=='\0')
-        return index+1;/
+        return index+1;//index不是下标
     else
         return index;
 }
