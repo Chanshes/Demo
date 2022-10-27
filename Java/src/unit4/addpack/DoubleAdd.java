@@ -1,0 +1,7 @@
+package unit4.addpack;
+//≥Ã–ÚDoubleAdd.java
+public class DoubleAdd {
+	public double addDouble(double a, double b){
+		return a+b;
+	}
+}
