@@ -6,6 +6,7 @@ typedef struct
 }StringType;
 
 void rnext();
+
 int next[Max_Strlen];
 int KMP_index(StringType s,StringType t){
     int k=0,j=0;
