@@ -1,8 +1,8 @@
 #define MAXLEN 1024
-struct StringType
+typedef struct 
 {
     char str[MAXLEN];
-    int Len;
+    int Length;
 }StringType;
 
 int BF(const char s[],const char t[])
@@ -18,7 +18,34 @@ int BF(const char s[],const char t[])
         {index++,i=index,j=0;}
     }
     if(t[j]=='\0')
-        return index+1;//index不是下标
+        return index+1;
     else
         return index;
+}
+//查找主串中是否存在给定字符串 如果有则返回当前相等字串的位置，否则返回-1；
+int BF_index(StringType s, StringType t)
+{
+    int index;
+    int i=0,j=0;
+    while(i<s.Length && j<t.Length)
+    {
+        if((i==-1)||(s.str[i]==t.str[j]))
+        {
+            i++;
+            j++;
+        }
+        else{
+            index++;
+            i=index;
+            j=0;
+        }
+    }
+    if(t.str[j]=='\0')
+    {
+        return index+1;
+    }
+    else
+    {
+        return index;
+    }
 }
