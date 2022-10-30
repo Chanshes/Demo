@@ -1,5 +1,5 @@
-## 数据库与MySQL
-### 习题
+# 数据库与MySQL
+
 1.数据库技术发展都经历了哪几个阶段？
 
     1.层次数据库和网状数据库技术阶段
@@ -80,7 +80,7 @@
         DELETE 语句用于删除表中的行。
     DELETE FROM table_name WHERE some_column=some_value;
 
-### 面试题
+## 面试题
 如何选择数据库？
 
     Oracle、DB2、SQL Server数据库主要应用于比较大的管理系统当中。Access、MySQL、PostgreSQL属于中小型数据库、主要应用与中小型的管理系统。SQL Server和Access数据库只能在Windows系列的操作系统上运行。Oracle、DB2、PostgreSQL、MySQL都可以在UNIX和Linux和Mac OS X操作系统上。Oracle和DB2都比较复杂，MySQL和PostgreSQL都非常易用，但性能不如Oracle。因此在选择数据库时，要根据运行的操作系统、项目的需求等综合考虑。
