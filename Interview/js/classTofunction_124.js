@@ -11,5 +11,3 @@ class Example {
         console.log(this.name)
     }
 }
-var e = new Example('abc');
-new e.func();
