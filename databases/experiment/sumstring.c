@@ -8,7 +8,7 @@ int main()
     char string[MAX];
     int i,num=0,word=0;
     char c,s;
-    printf("Please enter a line of characters separated by spaces:");
+    printf("Please enter a line of characters separated by spaces:\n");
     gets(string);
     for(i=0;(c=string[i])!='\0';i++)
     {
