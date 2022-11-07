@@ -15,7 +15,9 @@ int BF(const char s[],const char t[])
         {   i++;
             j++;}
         else
-        {index++,i=index,j=0;}
+        {
+            index++,i=index,j=0;
+        }
     }
     if(t[j]=='\0')
         return index+1;

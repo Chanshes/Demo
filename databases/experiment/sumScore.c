@@ -15,7 +15,7 @@ int main()
 {
 	int i, j;
 	student stu[30];
-	int amax = 0;
+	double amax = 0;
 	int index = 0;
 	for(i = 1; i <= 30; i++){
 		if(i==1)
@@ -31,13 +31,13 @@ int main()
 		printf("Name:%s, ID: %d\n",stu[i].name, stu[i].id);
 		printf("Chinese: %d, Math: %d, English: %d \n",stu[i].Chinese,stu[i].Math,stu[i].English);
 		stu[i].average = (stu[i].Chinese+stu[i].Math+stu[i].English)/3;
-		printf("Average score: %f\n", stu[i].average);
+		printf("Average score: %.2f\n", stu[i].average);
 		if(stu[i].average > amax){
 			amax = stu[i].average;
 			index = i;
 		}
 	}
-	printf("Highest average score is %d",amax);
+	printf("\nHighest average score is %.2f\n",amax);
 	printf("Name:%s,ID: %d\n",stu[index].name, stu[index].id);
 	printf("Chinese: %d , Math: %d, English: %d \n",stu[index].Chinese,stu[index].Math,stu[index].English);
 	system("pause");

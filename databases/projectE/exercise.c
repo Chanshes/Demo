@@ -55,21 +55,26 @@ void DelList(LinkList *head, int position) {//按位置删除链表中元素函�
         p = p->next;
         j++;
     }
-    if (p->next != NULL && j == position - 1) {
+    if(p->next != NULL && j == position - 1)
+    {
         s = p->next;
         x = s->data;
         p->next = s->next;
         free(s);
         printf("删除第%d位上的元素%d成功\n", position, x);
-    } else {
+    }
+    else
+    {
         printf("删除结点位置错误，删除失败");
     }
 }
  
-void DispList(LinkList *head) {//显示输出链表函数
+void DispList(LinkList *head)
+{//显示输出链表函数
     LinkList *p;
     p = head->next;
-    while (p != NULL) {
+    while (p != NULL)
+    {
         printf("%d ", p->data);
         p = p->next;
     }
@@ -80,20 +85,19 @@ void InsList(LinkList *head, int i, DataType x) {  /*按位置插入元素函数
     int j = 0;
     LinkList *p, *s;
     p = head;
-    while (p->next != NULL && j < i - 1)  /*定位插入点*/
+    while(p->next != NULL && j < i - 1)  /*定位插入点*/
     {
-        p = p->next;
+        p=p->next;
         j++;
     }
- 
-    if (p != NULL)        /*p不为空则将新结点插到p后*/
+    if(p!=NULL)       /*p不为空则将新结点插到p后*/
     {
         s = (LinkList *) malloc(sizeof(LinkList)); /*生成新结点s*/
         s->data = x;               /*将数据x放入新结点的数据域*/
         s->next = p->next;        /*将新结点s的指针域与p结点后面元素相连*/
         p->next = s;               /*将p与新结点s链接*/
         printf("插入元素成功！");
-    } else
+    }else
         printf("插入元素失败");
 }
  
@@ -154,7 +158,7 @@ int main() {
                         break;
                     printf("输入的位置越界！请重新输入位置~~\n");
                 }
-                printf("第%d个元素为：%d\n", position, OutList(head, position - 1));
+                printf("第%d个元素为: %d\n", position, OutList(head, position - 1));
                 break;
  
             case 3://向指定位置插入元素
