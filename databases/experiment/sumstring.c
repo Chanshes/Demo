@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <windows.h>
+
 #define MAX 1024
 // 输入一行字符，计算该行字符中包含多少个单词，单词之间用空格分隔开
 int main()
@@ -18,11 +20,12 @@ int main()
         {
             if(word==0)
             {
-            word=1;
-            num++;
+                word++;
+                num++;
             }
         }
     }
     printf("There are %d words in the line.\n",num);
+    system("pause");
     return 0;
 }

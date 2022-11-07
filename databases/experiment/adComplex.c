@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <windows.h>
 // 利用add函数求两个复数2+3i和4+5i的和。（要求用结构体来定义复数）
 typedef struct
 {
@@ -8,6 +9,7 @@ typedef struct
 void inComplex(complex *p)
 {
     scanf("%lf%lf",&p->re,&p->im);
+    getchar();
 }
 
 complex addComplex(complex *p, complex *sp)
@@ -26,5 +28,7 @@ int main()
     printf("Enter the second complex number:");
     inComplex(&b);
     result=addComplex(&a,&b);
-    printf("The sum of two complex numbers is %g+%gi",result.re,result.im);
+    printf("The sum of two complex numbers is %g+%gi. \n",result.re,result.im);
+    system("pause");
+    return 0;
 }
