@@ -28,7 +28,7 @@ int main()
     printf("Enter the second complex number:");
     inComplex(&b);
     result=addComplex(&a,&b);
-    printf("The sum of two complex numbers is %g+%gi. \n",result.re,result.im);
+    printf("The sum of two complex numbers is %g%+gi. \n",result.re,result.im);
     system("pause");
     return 0;
 }
