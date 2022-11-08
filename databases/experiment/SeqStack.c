@@ -121,6 +121,7 @@ int main()
                 printf("取出栈顶元素：%d",PopStack(&seqstack));
                 break;
             case 5:
+                printf("遍历顺序栈:\n");
                 ErgodicStack(&seqstack);
                 break;
             case 0:
