@@ -1,7 +1,7 @@
 # include <stdio.h>
-# include <malloc.h>
 
-#define MAXLEN 8
+
+#define MAXLEN 4
 
 typedef int DataType;
 
@@ -29,7 +29,7 @@ int isNullSq(SQueue *q)
 //判断队满
 int isFullSq(SQueue *q)
 {
-    if((q->rear+1)%MAXLEN==q->front)
+    if((q->rear)== MAXLEN)
         return 1;
     else
         return 0;
@@ -37,29 +37,33 @@ int isFullSq(SQueue *q)
 //入队操作
 void inSque(SQueue *q, DataType d)
 {
-    q->stack[q->front]=d;//先入 后front++
-    q->front++;
+    if(q->rear<MAXLEN)
+    {
+        q->stack[q->rear]=d;//先入 后front++
+        q->rear++;
+    }
 }
 //出队
 DataType outSque(SQueue *q)
 {
-    if(isNullSq(q))
+    if(q->front<q->rear)
     {
-        printf("空队列不能出队");
-        return 0;
+        q->front++;
+        return q->front;
     }
     else
-    {   
-        q->rear++;
-        return q->rear;
+    {
+        printf("队空！");
+        return 0;
     }
+        
 }
 
 //遍历队列
 void prinSq(const SQueue *q)
 {
     int i;
-    for(i=q->rear;i<q->front;i++)
+    for(i=q->front;i<q->rear;i++)
     {
         printf("%d\t",q->stack[i]);
     }
@@ -105,7 +109,7 @@ int main()
                 printf("队满不能入队!");
             else
             {
-                printf("请输入要入队的元素个数: ");
+                printf("队列剩余%d位，请输入要入队的元素个数: ",MAXLEN-sq.rear);
                 scanf("%d",&n);
                 printf("请输入:");
                 for(i=0;i<n;i++)
@@ -123,19 +127,19 @@ int main()
             }
             else
             {
-                printf("请输入要出队队的元素个数:");
+                printf("\n队列%d位, 请输入要出队的元素个数: ",sq.rear-sq.front);
                 scanf("%d",&n);
-                for(i=0;i<n;i++)
+                for(i=0;i<n&&i<MAXLEN;i++)
                 {
                     x=outSque(&sq);
                     printf("%d\t",x);
                 }
-                printf("出队完成！");
+                printf("\n出队完成！");
             }
             break;
         case 4:
             printf("遍历队列:");
-            for(i=sq.rear;i<sq.front;i++)
+            for(i=sq.front;i<sq.rear;i++)
             {
                 printf("%d\t",sq.stack[i]);
             }
