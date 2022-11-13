@@ -1,5 +1,5 @@
 
-//è¿™é¢˜å°±æ˜¯ç›´æ¥ç”¨ä¹‹å‰é€šè¿‡ä¸­åºå’Œå‰åºæ‰¾ååºçš„ä»£ç ç›´æ¥æ”¹çš„ï¼Œå°±æ˜¯æŠŠè¾“å‡ºååºæ”¹æˆäº†è®¡ç®—é«˜åº¦
+//ÕâÌâ¾ÍÊÇÖ±½ÓÓÃÖ®Ç°Í¨¹ıÖĞĞòºÍÇ°ĞòÕÒºóĞòµÄ´úÂëÖ±½Ó¸ÄµÄ£¬¾ÍÊÇ°ÑÊä³öºóĞò¸Ä³ÉÁË¼ÆËã¸ß¶È
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -14,28 +14,28 @@ typedef struct Node
 int h, max;
 char pre[30], in[30];
 
-//å½“å‰å…ˆåºåºåˆ—çš„åŒºé—´ä¸º[preL, preR], ä¸­åºåºåˆ—åŒºé—´ä¸º[inL, inR],è¿”å›æ ¹èŠ‚ç‚¹çš„åœ°å€
+//µ±Ç°ÏÈĞòĞòÁĞµÄÇø¼äÎª[preL, preR], ÖĞĞòĞòÁĞÇø¼äÎª[inL, inR],·µ»Ø¸ù½ÚµãµÄµØÖ·
 List* Create(int preL, int preR, int inL, int inR)
 {
     if(preL > preR)
     {
-        return NULL; //å…ˆåºåºåˆ—é•¿åº¦å°äºç­‰äº0æ—¶ï¼Œç›´æ¥è¿”å›
+        return NULL; //ÏÈĞòĞòÁĞ³¤¶ÈĞ¡ÓÚµÈÓÚ0Ê±£¬Ö±½Ó·µ»Ø
     }
     List *root = (List *)malloc(sizeof(List));
     root->data = pre[preL];
     int k;
     for(k = inL; k <= inR; k++)
     {
-        if(in[k] == pre[preL]) //åœ¨ä¸­åºåºåˆ—ä¸­æ‰¾åˆ°in[k] == pre[preL]çš„ç»“ç‚¹
+        if(in[k] == pre[preL]) //ÔÚÖĞĞòĞòÁĞÖĞÕÒµ½in[k] == pre[preL]µÄ½áµã
         {
             break;
         }
     }
-    int numLeft = k - inL; //å¯¹äºå½“å‰ç»“ç‚¹çš„å·¦å­æ ‘çš„ç»“ç‚¹çš„ä¸ªæ•°
+    int numLeft = k - inL; //¶ÔÓÚµ±Ç°½áµãµÄ×ó×ÓÊ÷µÄ½áµãµÄ¸öÊı
     root->lchild = Create(preL+1, preL+numLeft, inL, k-1);
     root->rchild = Create(preL+numLeft+1, preR, k+1, inR);
 
-    return root; //è¿”å›æ ¹ç»“ç‚¹åœ°å€
+    return root; //·µ»Ø¸ù½áµãµØÖ·
 }
 
 void Postorder(List *root, int k)
@@ -56,13 +56,13 @@ int main()
     int n;
     while(~scanf("%d", &n))
     {
-        printf("è¾“å…¥å…ˆåº: ");
+        printf("ÊäÈëÏÈĞò: ");
         scanf("%s", pre);
-        printf("\nè¾“å…¥ä¸­åº: ");
+        printf("\nÊäÈëÖĞĞò: ");
         scanf("%s", in);
         h = strlen(pre);
         max = 0;
-        List *root = Create(0, h-1, 0, h-1); //å»ºæ ‘
+        List *root = Create(0, h-1, 0, h-1); //½¨Ê÷
         Postorder(root, 1);
         printf("%d\n", max);
     }
