@@ -11,7 +11,7 @@ typedef struct
     int front, rear;
 }SQueue;
 
-//初始化链表
+//初始化队列
 void initSq (SQueue *q)
 {
     q->front=0, q->rear=0;
