@@ -1,89 +1,90 @@
 #include <stdio.h>
-#include<malloc.h>
+#include <malloc.h>
 
-//é“¾å¼çº¿æ€§è¡¨çš„å»ºç«‹ã€æ’å…¥åŠåˆ é™¤ã€‚
+//Á´Ê½ÏßĞÔ±íµÄ½¨Á¢¡¢²åÈë¼°É¾³ı¡£
 typedef int DataType;
 typedef struct Linknode
 {
     DataType data;
-    struct linknode *next;
+    struct Linknode *next;
 }LinkList;
-//åˆå§‹åŒ–é“¾è¡¨å‡½æ•°
+
+//³õÊ¼»¯Á´±íº¯Êı
 LinkList *InitList()
 {
     LinkList *head;
-    head=(LinkList *)malloc(sizeof(LinkList));/*åŠ¨æ€åˆ†é…ä¸€ä¸ªç»“ç‚¹ç©ºé—´*/
+    head=(LinkList*)malloc(sizeof(LinkList));/*¶¯Ì¬·ÖÅäÒ»¸ö½áµã¿Õ¼ä*/
     head->next=NULL;
-    return head;/*å¤´æ–‡ä»¶LæŒ‡é’ˆåŸŸä¸ºç©ºï¼Œè¡¨ç¤ºç©ºé“¾è¡¨*/
+    return head;/*Í·ÎÄ¼şLÖ¸ÕëÓòÎª¿Õ£¬±íÊ¾¿ÕÁ´±í*/
 }
-//å¤´æ’æ³•å»ºç«‹é“¾è¡¨å‡½æ•°
+//Í·²å·¨½¨Á¢Á´±íº¯Êı
 void CreateListH(LinkList *head,int n)
 {
     LinkList *s;
     int i;
-    printf("è¯·è¾“å…¥%dä¸ªæ•´æ•°ï¼š",n);
+    printf("ÇëÊäÈë%d¸öÕûÊı£º",n);
     for(i=0;i<n;i++)
     {
-        s=(LinkList *)malloc(sizeof(LinkList));/*ç”Ÿæˆæ–°ç»“ç‚¹*/
-        scanf("%d",&s->data);/*è¯»å…¥æ–°ç»“ç‚¹çš„æ•°æ®åŸŸ*/
-        s->next=head->next;/*å°†æ–°ç»“ç‚¹çš„æŒ‡é’ˆåŸŸå­˜æ”¾å¤´ç»“ç‚¹çš„æŒ‡é’ˆåŸŸ*/
-        head->next=s;/*å°†æ–°ç»“ç‚¹æ’å…¥å¤´ç»“ç‚¹ä¹‹å*/
+        s=(LinkList *)malloc(sizeof(LinkList));/*Éú³ÉĞÂ½áµã*/
+        scanf("%d",&s->data);/*¶ÁÈëĞÂ½áµãµÄÊı¾İÓò*/
+        s->next=head->next;/*½«ĞÂ½áµãµÄÖ¸ÕëÓò´æ·ÅÍ·½áµãµÄÖ¸ÕëÓò*/
+        head->next=s;/*½«ĞÂ½áµã²åÈëÍ·½áµãÖ®ºó*/
     }
-    printf("å»ºç«‹çš„é“¾è¡¨æ“ä½œæˆåŠŸï¼");
+    printf("½¨Á¢µÄÁ´±í²Ù×÷³É¹¦£¡");
 }
-//å°¾æ’æ³•å»ºè¡¨
+//Î²²å·¨½¨±í
 void CreateListL(LinkList *head,int n)
 {
     LinkList *s, *last;
     int i;
-    last=head;/*lastå§‹ç»ˆæŒ‡å‘å°¾ç»“ç‚¹ï¼Œå¼€å§‹æ—¶æŒ‡å‘å¤´ç»“ç‚¹*/
-    printf("è¯·è¾“å…¥%dä¸ªæ•´æ•°ï¼š",n);
+    last=head;/*lastÊ¼ÖÕÖ¸ÏòÎ²½áµã£¬¿ªÊ¼Ê±Ö¸ÏòÍ·½áµã*/
+    printf("ÇëÊäÈë%d¸öÕûÊı£º",n);
     for(i=0;i<n;i++)
     {
-        s=(LinkList *)malloc(sizeof(LinkList));/*ç”Ÿæˆæ–°ç»“ç‚¹*/
-        scanf("%d",&s->data);/*è¯»å…¥æ–°ç»“ç‚¹çš„æ•°æ®åŸŸ*/
-        s->next=NULL;/*å°†æ–°ç»“ç‚¹çš„æŒ‡é’ˆåŸŸä¸ºç©º*/
-        last->next=s;/*å°†æ–°ç»“ç‚¹æ’å…¥è¡¨å°¾*/
-        last=s;/*å°†lastæŒ‡é’ˆæŒ‡å‘è¡¨å°¾ç»“ç‚¹*/
+        s=(LinkList *)malloc(sizeof(LinkList));/*Éú³ÉĞÂ½áµã*/
+        scanf("%d",&s->data);/*¶ÁÈëĞÂ½áµãµÄÊı¾İÓò*/
+        s->next=NULL;/*½«ĞÂ½áµãµÄÖ¸ÕëÓòÎª¿Õ*/
+        last->next=s;/*½«ĞÂ½áµã²åÈë±íÎ²*/
+        last=s;/*½«lastÖ¸ÕëÖ¸Ïò±íÎ²½áµã*/
     }
-    printf("å»ºç«‹é“¾è¡¨æ“ä½œæˆåŠŸï¼");
+    printf("½¨Á¢Á´±í²Ù×÷³É¹¦£¡");
 }
-//æ±‚è¡¨é•¿æ“ä½œ
+//Çó±í³¤²Ù×÷
 int LengthList(LinkList *head)
 {
     LinkList *p=head->next;
     int j=0;
-    while(p!=NULL)/*å½“pä¸æŒ‡å‘é“¾è¡¨å°¾æ—¶*/
+    while(p!=NULL)/*µ±p²»Ö¸ÏòÁ´±íÎ²Ê±*/
     {
         p=p->next;
         j++;
     }
     return j;
 }
-//æŸ¥æ‰¾æ“ä½œ
-//æŒ‰å€¼æŸ¥æ‰¾
+//²éÕÒ²Ù×÷
+//°´Öµ²éÕÒ
 void Locate(LinkList *head,DataType x)
 {
-    int j=1;/*è®¡æ•°å™¨*/
+    int j=1;/*¼ÆÊıÆ÷*/
     LinkList *p;
     p=head->next;
-    while(p!=NULL && p->data!=x)/*æŸ¥æ‰¾åŠå®šä½*/
+    while(p!=NULL && p->data!=x)/*²éÕÒ¼°¶¨Î»*/
     {
         p=p->next;
         j++;
     }
     if(p!=NULL)
-        printf("åœ¨è¡¨çš„ç¬¬%dä½æ‰¾åˆ°å€¼ä¸º%dçš„ç»“ç‚¹ï¼",j,x);
+        printf("ÔÚ±íµÄµÚ%dÎ»ÕÒµ½ÖµÎª%dµÄ½áµã£¡",j,x);
     else
-        printf("æœªæ‰¾åˆ°å€¼ä¸º%dçš„ç»“ç‚¹ï¼",x);
+        printf("Î´ÕÒµ½ÖµÎª%dµÄ½áµã£¡",x);
 }
-//æŒ‰åºå·æŸ¥æ‰¾
+//°´ĞòºÅ²éÕÒ
 int SearchList(LinkList *head,int i)
 {
     LinkList *p;
     int j=0;
     p=head;
-    if(i>LengthList(head))
+    if(i>LengthList(head) ||  i<1)
         return 0;
     while(p->next!=NULL && j<i)
     {
@@ -92,52 +93,55 @@ int SearchList(LinkList *head,int i)
     }
     if(j==i)
         return 1;
+    else
+        return 0;
 }
-//æ’å…¥æ“ä½œ
+
+//²åÈë²Ù×÷
 int InsList(LinkList *head,int i,DataType x)
 {
     int j=0;
     LinkList *p,*s;
     p=head;
-    while(p->next!=NULL && j<i-1) /*å®šä½æ’å…¥ç‚¹*/
+    while(p->next!=NULL && j<i-1) /*¶¨Î»²åÈëµã*/
     {
         p=p->next;
         j++;
     }
-    if(p!=NULL)/*pä¸ä¸ºç©ºåˆ™å°†æ–°ç»“ç‚¹æ’åˆ°på*/
+    if(p!=NULL)/*p²»Îª¿ÕÔò½«ĞÂ½áµã²åµ½pºó*/
     {
-        s=(LinkList *)malloc(sizeof(LinkList));/*ç”Ÿæˆæ–°ç»“ç‚¹s*/
-        s->data=x;/*å°†æ•°æ®xæ”¾å…¥åˆ°æ–°ç»“ç‚¹çš„æ•°æ®åŸŸ*/
-        s->next=p->next;/*å°†æ–°ç»“ç‚¹sçš„æŒ‡é’ˆåŸŸä¸pç»“ç‚¹åé¢çš„å…ƒç´ ç›¸è¿*/
-        p->next=s;/*å°†pä¸æ–°ç»“ç‚¹sé“¾æ¥*/
+        s=(LinkList *)malloc(sizeof(LinkList));/*Éú³ÉĞÂ½áµãs*/
+        s->data=x;/*½«Êı¾İx·ÅÈëµ½ĞÂ½áµãµÄÊı¾İÓò*/
+        s->next=p->next;/*½«ĞÂ½áµãsµÄÖ¸ÕëÓòÓëp½áµãºóÃæµÄÔªËØÏàÁ¬*/
+        p->next=s;/*½«pÓëĞÂ½áµãsÁ´½Ó*/
         return 1;
     }
     else
         return 0;
 }
-//åˆ é™¤æ“ä½œ
+//É¾³ı²Ù×÷
 int DelList(LinkList *head,int i)
 {
     int j=0;
     DataType x;
     LinkList *p=head,*s;
-    while(p->next!=NULL && j<i-1)/*å®šä½æ’å…¥ç‚¹*/
+    while(p->next!=NULL && j<i-1)/*¶¨Î»²åÈëµã*/
     {
         p=p->next;
         j++;
     }
     if(p->next!=NULL && j==i-1)
     {
-        s=p->next;/*qä¸ºè¦åˆ é™¤ç»“ç‚¹*/
-        x=s->data;/*å°†è¦åˆ é™¤çš„æ•°æ®æ”¾å…¥æŒ‡é’ˆå˜é‡xä¸­*/
-        p->next=s->next;/*å°†pç»“ç‚¹çš„æŒ‡é’ˆåŸŸä¸qç»“ç‚¹åé¢çš„å…ƒç´ ç›¸è¿*/
+        s=p->next;/*qÎªÒªÉ¾³ı½áµã*/
+        x=s->data;/*½«ÒªÉ¾³ıµÄÊı¾İ·ÅÈëÖ¸Õë±äÁ¿xÖĞ*/
+        p->next=s->next;/*½«p½áµãµÄÖ¸ÕëÓòÓëq½áµãºóÃæµÄÔªËØÏàÁ¬*/
         free(s);
         return 1;
     }
     else
         return 0;
 }
-//å•é“¾è¡¨çš„è¾“å‡º
+//µ¥Á´±íµÄÊä³ö
 void DispList(LinkList *head)
 {
     LinkList *p;
@@ -148,25 +152,25 @@ void DispList(LinkList *head)
         p=p->next;
     }
 }
-//èœå•
+//²Ëµ¥
 void Menu()
 {
-    printf("\n              å•é“¾è¡¨çš„å„ç§æ“ä½œ");
+    printf("\n              Á´Ê½ÏßĞÔ±íµÄ¸÷ÖÖ²Ù×÷");
     printf("\n===================================================");
-    printf("\n|            1â€”â€”â€”â€”å»ºç«‹å•é“¾è¡¨                  |");
-    printf("\n|            2â€”â€”â€”â€”æ’å…¥å…ƒç´                     |");
-    printf("\n|            3â€”â€”â€”â€”åˆ é™¤å…ƒç´                     |");
-    printf("\n|            4â€”â€”â€”â€”æŒ‰ä½ç½®æŸ¥æ‰¾å…ƒç´               |");
-    printf("\n|            5â€”â€”â€”â€”æŒ‰å…ƒç´ å€¼æŸ¥æ‰¾å…¶åœ¨è¡¨ä¸­ä½ç½®    |");
-    printf("\n|            6â€”â€”â€”â€”æ±‚å•é“¾è¡¨çš„é•¿åº¦              |");
-    printf("\n|            0â€”â€”â€”â€”é€€å‡º                        |");
+    printf("\n|            1¡ª¡ª¡ª¡ª½¨Á¢Á´±í                    |");
+    printf("\n|            2¡ª¡ª¡ª¡ª²åÈëÔªËØ                    |");
+    printf("\n|            3¡ª¡ª¡ª¡ªÉ¾³ıÔªËØ                    |");
+    printf("\n|            4¡ª¡ª¡ª¡ª°´Î»ÖÃ²éÕÒÔªËØ              |");
+    printf("\n|            5¡ª¡ª¡ª¡ª°´ÔªËØÖµ²éÕÒÆäÔÚ±íÖĞÎ»ÖÃ    |");
+    printf("\n|            6¡ª¡ª¡ª¡ªÇóÁ´±íµÄ³¤¶È                |");
+    printf("\n|            0¡ª¡ª¡ª¡ªÍË³ö                        |");
     printf("\n===================================================");
-    printf("\nè¯·è¾“å…¥èœå•å·ï¼ˆ0~6ï¼‰:");
+    printf("\nÇëÊäÈë²Ëµ¥ºÅ£¨0~6£©:");
 }
-//ä¸»å‡½æ•°
+//Ö÷º¯Êı
 int main()
 {
-    LinkList L;
+    LinkList *L;
     DataType x;
     int n,i,loc,ch;
     while (ch)
@@ -177,59 +181,59 @@ int main()
         switch (ch)
         {
         case 1:
-            InitList(&L);
-            printf("è¯·è¾“å…¥å»ºç«‹çº¿æ€§è¡¨çš„ä¸ªæ•°ï¼š");
+            L=InitList();
+            printf("ÇëÊäÈë½¨Á¢ÏßĞÔ±íµÄ¸öÊı£º");
             scanf("%d",&n);
-            CreateList(&L,n);
-            printf("å»ºç«‹çš„çº¿æ€§è¡¨ä¸ºï¼š");
+            CreateListH(&L,n);
+            printf("½¨Á¢µÄÏßĞÔ±íÎª£º");
             DispList(&L);
             break;
         case 2:
-            printf("è¯·è¾“å…¥è¦æ’å…¥çš„ä½ç½®ï¼š");
+            printf("ÇëÊäÈëÒª²åÈëµÄÎ»ÖÃ£º");
             scanf("%d",&i);
-            printf("è¯·è¾“å…¥è¦æ’å…¥çš„å…ƒç´ å€¼ï¼š");
+            printf("ÇëÊäÈëÒª²åÈëµÄÔªËØÖµ£º");
             scanf("%d",&x);
             if(InsList(&L,i,x))
             {
-                printf("å·²æˆåŠŸåœ¨ç¬¬%içš„ä½ç½®ä¸Šæ’å…¥%dï¼Œæ’å…¥åçš„å•é“¾è¡¨ä¸ºï¼š\n",i,x);
+                printf("ÒÑ³É¹¦ÔÚµÚ%iµÄÎ»ÖÃÉÏ²åÈë%d£¬²åÈëºóµÄµ¥Á´±íÎª£º\n",i,x);
                 DispList(&L);
             }
             else
-                printf("æ’å…¥å…ƒç´ å¤±è´¥ï¼");
+                printf("²åÈëÔªËØÊ§°Ü£¡");
             break;
         case 3:
-            printf("è¯·è¾“å…¥è¦åˆ é™¤å…ƒç´ çš„ä½ç½®ï¼š");
+            printf("ÇëÊäÈëÒªÉ¾³ıÔªËØµÄÎ»ÖÃ£º");
             scanf("%d",&i);
-            if(DelElem(&L,i))
+            if(DelList(&L,i))
             {
-                printf("å·²æˆåŠŸåœ¨ç¬¬%dçš„ä½ç½®ä¸Šåˆ é™¤%dï¼Œåˆ é™¤åçš„çº¿æ€§è¡¨ä¸ºï¼š\n",i,x);
+                printf("ÒÑ³É¹¦ÔÚµÚ%dµÄÎ»ÖÃÉÏÉ¾³ı%d£¬É¾³ıºóµÄÏßĞÔ±íÎª£º\n",i,x);
                 DispList(&L);
             }
             else
-                printf("åˆ é™¤ç»“ç‚¹ä½ç½®é”™è¯¯ï¼Œåˆ é™¤å¤±è´¥ï¼");
+                printf("É¾³ı½áµãÎ»ÖÃ´íÎó£¬É¾³ıÊ§°Ü£¡");
             break;
         case 4:
-            printf("è¯·è¾“å…¥è¦æŸ¥çœ‹è¡¨ä¸­å…ƒç´ ä½ç½®ï¼ˆä»1å¼€å§‹ï¼‰ï¼š");
+            printf("ÇëÊäÈëÒª²é¿´±íÖĞÔªËØÎ»ÖÃ£¨´Ó1¿ªÊ¼£©£º");
             scanf("%d",&i);
             if(SearchList(&L,i))
-                printf("å½“å‰çº¿æ€§è¡¨çš„ç¬¬%dä¸ªå…ƒç´ çš„å€¼ä¸ºï¼š%d\n",i,x);
+                printf("µ±Ç°ÏßĞÔ±íµÄµÚ%d¸öÔªËØµÄÖµÎª£º%d\n",i,x);
             else
-                printf("ä½ç½®é”™è¯¯ï¼Œé“¾è¡¨ä¸­æ²¡æœ‰è¯¥ä½ç½®ï¼");
+                printf("Î»ÖÃ´íÎó£¬Á´±íÖĞÃ»ÓĞ¸ÃÎ»ÖÃ£¡");
             break;
         case 5:
-            printf("è¾“å…¥è¦æŸ¥æ‰¾çš„å…ƒç´ å€¼ä¸ºï¼š");
+            printf("ÊäÈëÒª²éÕÒµÄÔªËØÖµÎª£º");
             scanf("%d",&x);
             Locate(&L,x);
             break;
         case 6:
-            printf("å½“å‰çº¿æ€§è¡¨çš„é•¿åº¦ä¸ºï¼š%d\n",LengthList(&L));
+            printf("µ±Ç°ÏßĞÔ±íµÄ³¤¶ÈÎª£º%d\n",LengthList(&L));
             break;
         case 0:
             ch=0;
-            printf("æˆåŠŸé€€å‡ºï¼");
+            printf("³É¹¦ÍË³ö£¡");
             break;
         default:
-            printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·è¾“å…¥0~6è¿›è¡Œé€‰æ‹©ï¼\n");
+            printf("ÊäÈëÓĞÎó£¬ÇëÊäÈë0~6½øĞĞÑ¡Ôñ£¡\n");
         }
     }
 }
