@@ -85,14 +85,3 @@ void diama()
     }
     cout<<"节约"<<n*n-(n*(2*d+1)-d*d-d+1)<<"个空间."<<endl;
 }
-//稀疏矩阵
-void spama()
-
-{
-
-}
-
-int main()
-{
-    return 0;
-}
