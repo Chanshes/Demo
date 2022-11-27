@@ -184,7 +184,7 @@ int main()
             L=InitList();
             printf("请输入建立线性表的个数：");
             scanf("%d",&n);
-            CreateListH(&L,n);
+            CreateListL(&L,n);
             printf("建立的线性表为：");
             DispList(&L);
             break;
