@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <windows.h>
+#include  <time.h>
 
 #define MAX 1024
 // 输入一行字符，计算该行字符中包含多少个单词，单词之间用空格分隔开
