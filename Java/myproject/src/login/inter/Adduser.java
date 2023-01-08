@@ -26,7 +26,7 @@ public class Adduser extends JFrame implements ActionListener{
 	
 	public Adduser(){
 		super();
-		this.setTitle("×¢²á");
+		this.setTitle("Ã—Ë˜Ë›Ã¡");
 		setSize(400,250);
 		setLocationRelativeTo(null);
 //		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,8 +34,8 @@ public class Adduser extends JFrame implements ActionListener{
 		cp.setLayout(null);
 		
 		name = new JLabel();
-		name.setText("êÇ³Æ");
-		name.setFont(new Font("Î¢ÈíÑÅºÚ",Font.PLAIN,15));
+		name.setText("Ä™Ã‡Å‚Ä†");
+		name.setFont(new Font("ÃË˜ÄŒÃ­ÅƒÄ¹ÅŸÃš",Font.PLAIN,15));
 		name.setBounds(50,13,40,20);
 		cp.add(name);
 		
@@ -44,8 +44,8 @@ public class Adduser extends JFrame implements ActionListener{
 		cp.add(jna);		
 		
 		lb1 = new JLabel();
-		lb1.setText("ÕËºÅ");
-		lb1.setFont(new Font("Î¢ÈíÑÅºÚ",Font.PLAIN,15));
+		lb1.setText("ÅÃ‹ÅŸÄ¹");
+		lb1.setFont(new Font("ÃË˜ÄŒÃ­ÅƒÄ¹ÅŸÃš",Font.PLAIN,15));
 		lb1.setBounds(50,53,40,20);
 		cp.add(lb1);
 		
@@ -54,14 +54,14 @@ public class Adduser extends JFrame implements ActionListener{
 		cp.add(jt1);		
 		
 		lb2 = new JLabel();
-		lb2.setText("ÃÜÂë");
-		lb2.setFont(new Font("Î¢ÈíÑÅºÚ",Font.PLAIN,15));
+		lb2.setText("Ä‚ÃœÃ‚Ã«");
+		lb2.setFont(new Font("ÃË˜ÄŒÃ­ÅƒÄ¹ÅŸÃš",Font.PLAIN,15));
 		lb2.setBounds(50,93,40,20);
 		cp.add(lb2);
 		
 		lb3 = new JLabel();
-		lb3.setText("È·ÈÏÃÜÂë");
-		lb3.setFont(new Font("Î¢ÈíÑÅºÚ",Font.PLAIN,14));
+		lb3.setText("ÄŒË‡ÄŒÄÄ‚ÃœÃ‚Ã«");
+		lb3.setFont(new Font("ÃË˜ÄŒÃ­ÅƒÄ¹ÅŸÃš",Font.PLAIN,14));
 		lb3.setBounds(40,133,60,20);
 		cp.add(lb3);
 		
@@ -76,15 +76,15 @@ public class Adduser extends JFrame implements ActionListener{
 		cp.add(jp2);	
 		
 		jb1 = new JButton();
-		jb1.setText("×¢²á");
-		jb1.setFont(new Font("Î¢ÈíÑÅºÚ",Font.PLAIN,14));
+		jb1.setText("Ã—Ë˜Ë›Ã¡");
+		jb1.setFont(new Font("ÃË˜ÄŒÃ­ÅƒÄ¹ÅŸÃš",Font.PLAIN,14));
 		jb1.setBounds(100,170,80,30);
 		jb1.addActionListener(this);
 		cp.add(jb1);
 		
 		jb2 = new JButton();
-		jb2.setText("ÖØÖÃ");
-		jb2.setFont(new Font("Î¢ÈíÑÅºÚ",Font.PLAIN,14));
+		jb2.setText("Ã–Å˜Ã–Ä‚");
+		jb2.setFont(new Font("ÃË˜ÄŒÃ­ÅƒÄ¹ÅŸÃš",Font.PLAIN,14));
 		jb2.setBounds(200,170,80,30);
 		jb2.addActionListener(this);
 		cp.add(jb2);
@@ -96,16 +96,16 @@ public class Adduser extends JFrame implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO Ã—Ã”Å›Å»Ã‰ÃºÅ‚Ã‰Ä¾Ã„Ë‡ËË‡Â¨Â´Ä‡Â¸Å¯
 		 String Username = jt1.getText();
          String Password1 = new String(jp1.getPassword());
          String Password2 = new String(jp2.getPassword());
          String Name = new String(jna.getText());
          
 		if(e.getSource() == jb1){
-			System.out.println("ÕË»§£º"+Username);
-			System.out.println("ÃÜÂë1£º"+Password1);
-			System.out.println("ÃÜÂë2£º"+Password2);
+			System.out.println("ÅÃ‹Å¥Â§ÅÅŸ"+Username);
+			System.out.println("Ä‚ÃœÃ‚Ã«1ÅÅŸ"+Password1);
+			System.out.println("Ä‚ÃœÃ‚Ã«2ÅÅŸ"+Password2);
 			int i = Username.compareTo("");
 			int j = Password1.compareTo("");
 			int l = Name.compareTo("");
@@ -116,29 +116,29 @@ public class Adduser extends JFrame implements ActionListener{
 							if(Password1.equals(Password2)){
 								Connect co = new Connect();
 								if(co.compareuser(Username)){
-									JOptionPane.showMessageDialog(null, "ÕËºÅÒÑ´æÔÚ!");
+									JOptionPane.showMessageDialog(null, "ÅÃ‹ÅŸÄ¹Å‡ÅƒÂ´Ä‡Ã”Ãš!");
 								}else{	 
 									boolean bo = co.adduserAccount(Username,Password1);
 									co.addbase(Username, Name);
 									co.addcourse(Username, Name);
 									if(bo){
-										JOptionPane.showMessageDialog(null, "×¢²á³É¹¦£¡");
+										JOptionPane.showMessageDialog(null, "Ã—Ë˜Ë›Ã¡Å‚Ã‰Å¡ÅšÅÄ„");
 									}
 									this.dispose();
 									@SuppressWarnings("unused")
 									InMain m = new InMain();	
 								}
 							}else{
-								JOptionPane.showMessageDialog(null, "Á½´ÎÊäÈëÃÜÂë²»Ò»ÖÂ£¡");
+								JOptionPane.showMessageDialog(null, "ÃËÂ´ÃÄ˜Ã¤ÄŒÃ«Ä‚ÃœÃ‚Ã«Ë›Å¥Å‡Å¥Ã–Ã‚ÅÄ„");
 							}
 						}else{
-							JOptionPane.showMessageDialog(null, "ÃÜÂë²»ÄÜÎª¿Õ£¡");
+							JOptionPane.showMessageDialog(null, "Ä‚ÃœÃ‚Ã«Ë›Å¥Ã„ÃœÃÅÅ¼ÅÅÄ„");
 						}
 					}else{
-						JOptionPane.showMessageDialog(null, "ÕËºÅ²»ÄÜÎª¿Õ£¡");
+						JOptionPane.showMessageDialog(null, "ÅÃ‹ÅŸÄ¹Ë›Å¥Ã„ÃœÃÅÅ¼ÅÅÄ„");
 					}
 			}else{
-				JOptionPane.showMessageDialog(null, "ÇëÊäÈëêÇ³Æ!");
+				JOptionPane.showMessageDialog(null, "Ã‡Ã«Ä˜Ã¤ÄŒÃ«Ä™Ã‡Å‚Ä†!");
 			}
 		}
 		

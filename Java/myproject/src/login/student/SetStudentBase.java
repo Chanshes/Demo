@@ -8,30 +8,30 @@ import mysql.Connect;
 public class SetStudentBase extends JFrame implements ActionListener{
 	String Username = null;
     private static final long serialVersionUID=1L;
-    JLabel JL=new JLabel("ĞŞ¸Ä¸öÈËĞÅÏ¢",JLabel.CENTER);
-    JLabel JLNumber=new JLabel("Ñ§ºÅ£º");
+    JLabel JL=new JLabel("ä¿®æ”¹ä¸ªäººä¿¡æ¯",JLabel.CENTER);
+    JLabel JLNumber=new JLabel("å­¦å·ï¼š");
     JTextField JTNumber;
 
-    JLabel JLName=new JLabel("ĞÕÃû£º");
+    JLabel JLName=new JLabel("å§“åï¼š");
     JTextField JTName=new JTextField();
 
-    JLabel JLClass=new JLabel("°à¼¶£º");
+    JLabel JLClass=new JLabel("ç­çº§ï¼š");
     JTextField JTClass=new JTextField();
 
-    JLabel JLsex=new JLabel("ĞÔ±ğ£º");
+    JLabel JLsex=new JLabel("æ€§åˆ«ï¼š");
     ButtonGroup BG=new ButtonGroup();
     JRadioButton JRB1;
     JRadioButton JRB2;
 
-    JLabel JL1=new JLabel("Ñ§Ôº£º");
+    JLabel JL1=new JLabel("å­¦é™¢ï¼š");
     JTextField JT1=new JTextField();
 
-    JLabel JL2=new JLabel("ÄêÁä£º");
+    JLabel JL2=new JLabel("å¹´é¾„ï¼š");
     JTextField JT2=new JTextField();
 
-    JButton JBAdd=new JButton("ĞŞ¸Ä");
-    JButton JBNext=new JButton("ÖØÖÃ");
-    JButton JBExit=new JButton("·µ»Ø");
+    JButton JBAdd=new JButton("ä¿®æ”¹");
+    JButton JBNext=new JButton("é‡ç½®");
+    JButton JBExit=new JButton("è¿”å›");
 
     String sql="";
 
@@ -60,42 +60,42 @@ public class SetStudentBase extends JFrame implements ActionListener{
 //		 System.out.println(username);
 //		 for(int i = 0; i <bases.length;i++)
 //			 System.out.println(bases[i]);
-		 if(bases[3].equals("ÄĞ")){
-			 JRB1 = new JRadioButton("ÄĞ", true);
-			 JRB2 = new JRadioButton("Å®");
-		 }else if(bases[3].equals("Å®")){
-			 JRB1 = new JRadioButton("ÄĞ");
-			 JRB2 = new JRadioButton("Å®", true);
+		 if(bases[3].equals("ç”·")){
+			 JRB1 = new JRadioButton("ç”·", true);
+			 JRB2 = new JRadioButton("å¥³");
+		 }else if(bases[3].equals("å¥³")){
+			 JRB1 = new JRadioButton("ç”·");
+			 JRB2 = new JRadioButton("å¥³", true);
 		 }else{
-			 JRB1 = new JRadioButton("ÄĞ");
-			 JRB2 = new JRadioButton("Å®");
+			 JRB1 = new JRadioButton("ç”·");
+			 JRB2 = new JRadioButton("å¥³");
 		 }
     	JTNumber=new JTextField();
     	JTNumber.setText(username);
     	JTNumber.setEditable(false);
-        this.setTitle("ĞŞ¸ÄÑ§ÉúĞÅÏ¢");
+        this.setTitle("ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯");
         this.setLayout(null);
 
 //        JL.setForeground(Color.yellow);
         JL.setForeground(new Color(0,200,200));
-        JL.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.PLAIN+Font.BOLD,22));
+        JL.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.PLAIN+Font.BOLD,22));
         JL.setBounds(120,30,200,40);
         this.add(JL);
 
         JLNumber.setBounds(100,80,100,20);
         this.add(JLNumber);
-        JLNumber.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+        JLNumber.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
         JTNumber.setBounds(190,80,100,20);
         this.add(JTNumber);
 
         JLName.setBounds(100,120,60,20);
         this.add(JLName);
-        JLName.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+        JLName.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
         JTName.setBounds(200,120,80,20);
         this.add(JTName);
 
         JLsex.setBounds(100,160,100,20);
-        JLsex.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+        JLsex.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
         this.add(JLsex);
         JRB1.setBounds(200,160,40,20);
         JRB2.setBounds(250,160,40,20);
@@ -107,7 +107,7 @@ public class SetStudentBase extends JFrame implements ActionListener{
         BG.add(JRB2);
 
         JL2.setBounds(100,200,80,20);
-        JL2.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+        JL2.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
         this.add(JL2);
         JT2.setBounds(200,200,80,20);
         this.add(JT2);
@@ -118,7 +118,7 @@ public class SetStudentBase extends JFrame implements ActionListener{
         this.add(JTClass);
 
         JL1.setBounds(100,280,60,20);
-        JL1.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+        JL1.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
         this.add(JL1);
         JT1.setBounds(190,280,100,20);
         this.add(JT1);
@@ -155,17 +155,17 @@ public class SetStudentBase extends JFrame implements ActionListener{
         { 	
             String id=JTNumber.getText();
             String name=JTName.getText();
-            String sex="Å®";
+            String sex="å¥³";
             if(JRB1.isSelected())
-                sex="ÄĞ";
+                sex="ç”·";
             String age=JT2.getText();
             String school=JTClass.getText();
             String sdept=JT1.getText(); 
             boolean cn = Connect.changebase(id, name, age, sex, sdept, school);
             if(cn == true){
-            	JOptionPane.showMessageDialog(null, "ĞŞ¸Ä³É¹¦£¡");
+            	JOptionPane.showMessageDialog(null, "ä¿®æ”¹æˆåŠŸï¼");
             }else{
-            	JOptionPane.showMessageDialog(null, "ĞŞ¸ÄÊ§°Ü£¡");
+            	JOptionPane.showMessageDialog(null, "ä¿®æ”¹å¤±è´¥ï¼");
             	}
         }
 
@@ -178,7 +178,7 @@ public class SetStudentBase extends JFrame implements ActionListener{
     		 JT2.setText(bases[2]);
     		 JT1.setText(bases[4]);
     		 JTClass.setText(bases[5]);
-    		 if(bases[3].equals("ÄĞ")){
+    		 if(bases[3].equals("ç”·")){
     			 JRB1.setSelected(true);
     		 }else{
     			 JRB2.setSelected(true);

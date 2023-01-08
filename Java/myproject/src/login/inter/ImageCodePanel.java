@@ -16,46 +16,46 @@ import javax.swing.JPanel;
 
 public class ImageCodePanel extends JPanel {
     private static final long serialVersionUID = -3124698225447711692L;
-    public static final int WIDTH = 100;// ¿í¶È
-    public static final int HEIGHT = 30;// ¸ß¶È
-    private String num = "";// ÑéÖ¤Âë
-    Random random = new Random();// ÊµÀı»¯Random
+    public static final int WIDTH = 100;// å®½åº¦
+    public static final int HEIGHT = 30;// é«˜åº¦
+    private String num = "";// éªŒè¯ç 
+    Random random = new Random();// å®ä¾‹åŒ–Random
     
     public ImageCodePanel() {
-        this.setVisible(true);// ÏÔÊ¾Ãæ°å
-        setLayout(null);// ¿Õ²¼¾Ö
+        this.setVisible(true);// æ˜¾ç¤ºé¢æ¿
+        setLayout(null);// ç©ºå¸ƒå±€
         }
     
     public void paint(Graphics g) {
         BufferedImage image = new BufferedImage(WIDTH, HEIGHT,
-                BufferedImage.TYPE_INT_RGB);// ÊµÀı»¯BufferedImage
-        Graphics gs = image.getGraphics(); // »ñÈ¡GraphicsÀàµÄ¶ÔÏó
+                BufferedImage.TYPE_INT_RGB);// å®ä¾‹åŒ–BufferedImage
+        Graphics gs = image.getGraphics(); // è·å–Graphicsç±»çš„å¯¹è±¡
         if (!num.isEmpty()) {
-            num = "";// Çå¿ÕÑéÖ¤Âë
+            num = "";// æ¸…ç©ºéªŒè¯ç 
         }
-        Font font = new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 20); // Í¨¹ıFont¹¹Ôì×ÖÌå
-        gs.setFont(font);// ÉèÖÃ×ÖÌå
-        gs.fillRect(0, 0, WIDTH, HEIGHT);// Ìî³äÒ»¸ö¾ØĞÎ
+        Font font = new Font("å¾®è½¯é›…é»‘", Font.BOLD, 20); // é€šè¿‡Fontæ„é€ å­—ä½“
+        gs.setFont(font);// è®¾ç½®å­—ä½“
+        gs.fillRect(0, 0, WIDTH, HEIGHT);// å¡«å……ä¸€ä¸ªçŸ©å½¢
         //
         
         Image img = null;
         try {
-            img = ImageIO.read(new File("images/image.jpg"));  // ´´½¨Í¼Ïñ¶ÔÏó
+            img = ImageIO.read(new File("images/image.jpg"));  // åˆ›å»ºå›¾åƒå¯¹è±¡
         } catch (IOException e) {
             e.printStackTrace();
         }
-        image.getGraphics().drawImage(img, 0, 0, WIDTH, HEIGHT, null);// ÔÚ»º³åÍ¼Ïñ¶ÔÏóÉÏ»æÖÆÍ¼Ïñ
+        image.getGraphics().drawImage(img, 0, 0, WIDTH, HEIGHT, null);// åœ¨ç¼“å†²å›¾åƒå¯¹è±¡ä¸Šç»˜åˆ¶å›¾åƒ
         
         
-        // Êä³öËæ»úµÄÑéÖ¤ÎÄ×Ö
+        // è¾“å‡ºéšæœºçš„éªŒè¯æ–‡å­—
         for (int i = 0; i < 4; i++) {
-            char ctmp = (char) (random.nextInt(26) + 65); // Éú³ÉA~ZµÄ×ÖÄ¸
-            num += ctmp;//½«Éú³ÉµÄ×ÖÄ¸±£´æÔÚnumÒÔ±ãÊ¹ÓÃ
+            char ctmp = (char) (random.nextInt(26) + 65); // ç”ŸæˆA~Zçš„å­—æ¯
+            num += ctmp;//å°†ç”Ÿæˆçš„å­—æ¯ä¿å­˜åœ¨numä»¥ä¾¿ä½¿ç”¨
             Color color = new Color(20 + random.nextInt(120), 20 + random
-                    .nextInt(120), 20 + random.nextInt(120));// Éú³ÉËæ»úÑÕÉ«
+                    .nextInt(120), 20 + random.nextInt(120));// ç”Ÿæˆéšæœºé¢œè‰²
             gs.setColor(color); 
-            Graphics2D gs2d = (Graphics2D) gs;// ½«ÎÄ×ÖĞı×ªÖ¸¶¨½Ç¶È
-            AffineTransform trans = new AffineTransform();// ÊµÀı»¯AffineTransform
+            Graphics2D gs2d = (Graphics2D) gs;// å°†æ–‡å­—æ—‹è½¬æŒ‡å®šè§’åº¦
+            AffineTransform trans = new AffineTransform();// å®ä¾‹åŒ–AffineTransform
             /*https://blog.csdn.net/yuyue618/article/details/83260689?ops_reque
             st_misc=%257B%2522request%255Fid%2522%253A%2522165560076116
             781435477497%2522%252C%2522scm%2522%253A%252220140713.13
@@ -64,22 +64,22 @@ public class ImageCodePanel extends JPanel {
             obaiduend~default-2-83260689-null-null.142^v17^control,157^v15^
             new_3&utm_term=AffineTransform&spm=1018.2226.3001.4187*/
             trans.rotate(random.nextInt(45) * 3.14 / 180, 22 * i + 8, 7);
-            float scaleSize = random.nextFloat() + 0.8f;// Ëõ·ÅÎÄ×Ö
+            float scaleSize = random.nextFloat() + 0.8f;// ç¼©æ”¾æ–‡å­—
             if (scaleSize > 1f)
-                scaleSize = 1f;// Èç¹ûscaleSize´óÓÚ1,ÔòµÈÓÚ1
-            trans.scale(scaleSize, scaleSize); // ½øĞĞËõ·Å
-            gs2d.setTransform(trans);// ÉèÖÃAffineTransform¶ÔÏó
-            gs.drawString(String.valueOf(ctmp), WIDTH / 6 * i + 28, HEIGHT / 2);// »­³öÑéÖ¤Âë
+                scaleSize = 1f;// å¦‚æœscaleSizeå¤§äº1,åˆ™ç­‰äº1
+            trans.scale(scaleSize, scaleSize); // è¿›è¡Œç¼©æ”¾
+            gs2d.setTransform(trans);// è®¾ç½®AffineTransformå¯¹è±¡
+            gs.drawString(String.valueOf(ctmp), WIDTH / 6 * i + 28, HEIGHT / 2);// ç”»å‡ºéªŒè¯ç 
         }
-        g.drawImage(image, 0, 0, null);// ÔÚÃæ°åÖĞ»­³öÑéÖ¤Âë
+        g.drawImage(image, 0, 0, null);// åœ¨é¢æ¿ä¸­ç”»å‡ºéªŒè¯ç 
     }
     
-    // Éú³ÉÑéÖ¤ÂëµÄ·½·¨
+    // ç”ŸæˆéªŒè¯ç çš„æ–¹æ³•
     public void draw() {
-        repaint();// µ÷ÓÃpaint()·½·¨
+        repaint();// è°ƒç”¨paint()æ–¹æ³•
     }
     
     public String getNum() {
-        return num;// ·µ»ØÑéÖ¤Âë
+        return num;// è¿”å›éªŒè¯ç 
     }
 }

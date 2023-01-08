@@ -36,31 +36,31 @@ public class Login extends JFrame implements ActionListener{
 		 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 jpbg.setOpaque(false);
 		
-		this.setTitle("Ñ§ÉúĞÅÏ¢¹ÜÀí");
+		this.setTitle("å­¦ç”Ÿä¿¡æ¯ç®¡ç†");
 		this.setSize(600,500);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
-		JMenu menu1=new JMenu("Ñ§ÉúĞÅÏ¢");
+		JMenu menu1=new JMenu("å­¦ç”Ÿä¿¡æ¯");
 		this.add(menu1);
-		JMenu menu2=new JMenu("ÉèÖÃ");
+		JMenu menu2=new JMenu("è®¾ç½®");
 		this.add(menu2);
-		JMenu menu3=new JMenu("ÍË³ö");
+		JMenu menu3=new JMenu("é€€å‡º");
 		this.add(menu3);
 		
-		JMenuItem item11=new JMenuItem("»ù±¾ĞÅÏ¢²éÑ¯");
-		JMenuItem item12=new JMenuItem("²éÑ¯¿Î³Ì³É¼¨");
+		JMenuItem item11=new JMenuItem("åŸºæœ¬ä¿¡æ¯æŸ¥è¯¢");
+		JMenuItem item12=new JMenuItem("æŸ¥è¯¢è¯¾ç¨‹æˆç»©");
 
 		menu1.add(item11);
 		menu1.add(item12);
 		
-		JMenuItem item21 = new JMenuItem("¸ü¸ÄÃÜÂë");
+		JMenuItem item21 = new JMenuItem("æ›´æ”¹å¯†ç ");
 		menu2.add(item21);
 		
-		JMenuItem item31 = new JMenuItem("ÍË³öÕËºÅ");
-		JMenuItem item32 = new JMenuItem("ÍË³ö³ÌĞò");
+		JMenuItem item31 = new JMenuItem("é€€å‡ºè´¦å·");
+		JMenuItem item32 = new JMenuItem("é€€å‡ºç¨‹åº");
 		
 		menu3.add(item31);
 		menu3.add(item32);
@@ -77,8 +77,8 @@ public class Login extends JFrame implements ActionListener{
 		item11.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-				//ĞÅÏ¢
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+				//ä¿¡æ¯
 				StuBase st = new StuBase();
 				st.setVisible(true);
 			}
@@ -87,8 +87,8 @@ public class Login extends JFrame implements ActionListener{
 		item12.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-				//¿Î³Ì
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+				//è¯¾ç¨‹
 				StuCourse st = new StuCourse();
 				st.setVisible(true);
 			}
@@ -97,8 +97,8 @@ public class Login extends JFrame implements ActionListener{
 		item21.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-				//ĞŞ¸Ä¸öÈËÃÜÂë
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+				//ä¿®æ”¹ä¸ªäººå¯†ç 
 				final JPanel jp1 = new JPanel();
 				
 				jp1.setBounds(0,20,JFHMAX,JFVMAX);
@@ -106,62 +106,62 @@ public class Login extends JFrame implements ActionListener{
 				setContentPane(jp1);					
 				jp1.setLayout(null);
 				
-				JLabel lb1 = new JLabel("ĞŞ¸Ä¹ÜÀíÔ±ÃÜÂë");
+				JLabel lb1 = new JLabel("ä¿®æ”¹ç®¡ç†å‘˜å¯†ç ");
 				lb1.setBounds(520,40,400,80);
 				lb1.setForeground(Color.red);
-				lb1.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,40));
+				lb1.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,40));
 				jp1.add(lb1);
 				
 				
-				JLabel lbname = new JLabel("¹ÜÀíÔ±:");
-				lbname.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,26));
+				JLabel lbname = new JLabel("ç®¡ç†å‘˜:");
+				lbname.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,26));
 				lbname.setBounds(450,165,100,40);
 				jp1.add(lbname);
 				
 				JLabel lbna = new JLabel();
 				lbna.setText("root");
 				lbna.setBounds(580,170,400,40);
-				lbna.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,26));
+				lbna.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,26));
 				jp1.add(lbna);
 				
 				JLabel lbpa1 = new JLabel();
-				lbpa1.setText("ÃÜÂë£º");
+				lbpa1.setText("å¯†ç ï¼š");
 				lbpa1.setBounds(450,240,100,30);
-				lbpa1.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,26));
+				lbpa1.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,26));
 				jp1.add(lbpa1);
 				
 				final JPasswordField jt1 = new JPasswordField();
 				jt1.setBounds(570,243,250,30);
-				jt1.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,20));
+				jt1.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,20));
 				jt1.setEchoChar('*');
 				jp1.add(jt1);
 				
 				JLabel lbpa2 = new JLabel();
-				lbpa2.setText("ÇëÊäÈëĞÂÃÜÂë£º");
+				lbpa2.setText("è¯·è¾“å…¥æ–°å¯†ç ï¼š");
 				lbpa2.setBounds(400,300,180,30);
-				lbpa2.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,22));
+				lbpa2.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,22));
 				jp1.add(lbpa2);
 				
 				final JPasswordField jt2 = new JPasswordField();
 				jt2.setBounds(570,303,250,30);
-				jt2.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,26));
+				jt2.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,26));
 				jt2.setEchoChar('*');
 				jp1.add(jt2);
 				
 				JLabel lbpa3 = new JLabel();
-				lbpa3.setText("ÔÙ´ÎÇëÊäÈëĞÂÃÜÂë£º");
+				lbpa3.setText("å†æ¬¡è¯·è¾“å…¥æ–°å¯†ç ï¼š");
 				lbpa3.setBounds(375,360,200,30);
-				lbpa3.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,22));
+				lbpa3.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,22));
 				jp1.add(lbpa3);
 				
 				final JPasswordField jt3 = new JPasswordField();
 				jt3.setBounds(570,363,250,30);
-				jt3.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,26));
+				jt3.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,26));
 				jt3.setEchoChar('*');
 				jp1.add(jt3);
 				
 				final JLabel ltime = new JLabel();
-				ltime.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,26));
+				ltime.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,26));
 				ltime.setForeground(Color.red);
 				ltime.setBounds(50,50,400,60);
 				jp1.add(ltime);
@@ -169,23 +169,23 @@ public class Login extends JFrame implements ActionListener{
 				final Timer t = new Timer(1000, new ActionListener(){
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+						// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 						Date now = new Date();  
-				        SimpleDateFormat sdf = new SimpleDateFormat("yyyyÄêMMÔÂddÈÕ HH:mm:ss");// DateFomatµÄ×ÓÀà¡£  
-				        System.out.println("ÏÖÔÚÊ±¿Ì£º" + sdf.format(now));  
+				        SimpleDateFormat sdf = new SimpleDateFormat("yyyyå¹´MMæœˆddæ—¥ HH:mm:ss");// DateFomatçš„å­ç±»ã€‚  
+				        System.out.println("ç°åœ¨æ—¶åˆ»ï¼š" + sdf.format(now));  
 //				        Toolkit.getDefaultToolkit().beep(); 
 				        ltime.setText(sdf.format(now));
 					}
 		        }); 
 				
-				JButton jbadd = new JButton("ĞŞ¸Ä");
-				jbadd.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,26));
+				JButton jbadd = new JButton("ä¿®æ”¹");
+				jbadd.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,26));
 				jbadd.setBounds(420,440,100,50);
 				jp1.add(jbadd);
 				jbadd.addActionListener(new ActionListener(){
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+						// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 						@SuppressWarnings("deprecation")
 						String pa1 = jt1.getText().toString();
 						@SuppressWarnings("deprecation")
@@ -198,7 +198,7 @@ public class Login extends JFrame implements ActionListener{
 						int k = pa3.compareTo("");
 //						System.out.println("1:"+i+", 2:"+j);
 						if(i==0||j==0||k==0){
-							JOptionPane.showMessageDialog(null, "ÃÜÂë²»ÄÜÎª¿Õ!");
+							JOptionPane.showMessageDialog(null, "å¯†ç ä¸èƒ½ä¸ºç©º!");
 						}else{
 							if(Connect.compare(Username, pa1, 0)){
 								System.out.println("username="+Username+"pa1="+pa1);
@@ -207,28 +207,28 @@ public class Login extends JFrame implements ActionListener{
 									cn.changepass(Username, pa2);
 									System.out.println("username="+Username+"pa2="+pa2);
 									System.out.println("username="+Username+"pa3="+pa3);
-									JOptionPane.showMessageDialog(null, "ĞŞ¸Ä³É¹¦!");
+									JOptionPane.showMessageDialog(null, "ä¿®æ”¹æˆåŠŸ!");
 									jt1.setText("");
 									jt2.setText("");
 									jt3.setText("");
 								}else{
-									JOptionPane.showMessageDialog(null, "Á½´ÎÊäÈëµÄÃÜÂë²»Ò»ÖÂ!");
+									JOptionPane.showMessageDialog(null, "ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€è‡´!");
 								}
 							}else{
-								JOptionPane.showMessageDialog(null, "Ô­ÃÜÂë´íÎó!");
+								JOptionPane.showMessageDialog(null, "åŸå¯†ç é”™è¯¯!");
 							}
 						}
 					}
 				});
-				JButton jbre= new JButton("ÖØÖÃ");
-				jbre.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,26));
+				JButton jbre= new JButton("é‡ç½®");
+				jbre.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,26));
 				jbre.setBounds(580,440,100,50);
 				jp1.add(jbre);
 				jbre.addActionListener(new ActionListener(){
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+						// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 						jt1.setText("");
 						jt2.setText("");
 						jt3.setText("");
@@ -236,8 +236,8 @@ public class Login extends JFrame implements ActionListener{
 					
 				});
 				
-				JButton jbexit = new JButton("·µ»Ø");
-				jbexit.setFont(new Font("Î¢ÈíÑÅºÚ",Font.BOLD,26));
+				JButton jbexit = new JButton("è¿”å›");
+				jbexit.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD,26));
 				jbexit.setBounds(740,440,100,50);
 				jp1.add(jbexit);
 				
@@ -255,13 +255,13 @@ public class Login extends JFrame implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {	
 		AbstractButton item= (AbstractButton)e.getSource();
-		if(item.getText().equals("ÍË³öÕËºÅ")){
+		if(item.getText().equals("é€€å‡ºè´¦å·")){
 			this.dispose();
-			JOptionPane.showMessageDialog(null, "ÍË³ö³É¹¦!");
+			JOptionPane.showMessageDialog(null, "é€€å‡ºæˆåŠŸ!");
 			MainFrame mf = new MainFrame();
 			mf.setVisible(true);
 		}
-		if(item.getText().equals("ÍË³ö³ÌĞò")){
+		if(item.getText().equals("é€€å‡ºç¨‹åº")){
 			System.exit(0);
 		}
 	}

@@ -19,40 +19,40 @@ import mysql.Connect;
 
 public class AddStuCourse extends JFrame implements ActionListener{
 	/**
-	 * Ìí¼Ó³É¼¨
+	 * æ·»åŠ æˆç»©
 	 */
 	private static final long serialVersionUID = 1L;
 
-	JLabel j0=new JLabel("Ñ§ºÅ:");
+	JLabel j0=new JLabel("å­¦å·:");
 	JTextField J0 = new JTextField();
 
-	JLabel j1=new JLabel("ĞÕÃû:");
+	JLabel j1=new JLabel("å§“å:");
 	JTextField J1 = new JTextField();
 	
-	JLabel j2=new JLabel("Ñ§ÆÚ:");
+	JLabel j2=new JLabel("å­¦æœŸ:");
 	JTextField J2=new JTextField();
 	
-	JLabel j3=new JLabel("ÎÄÑ§:");
+	JLabel j3=new JLabel("æ–‡å­¦:");
 	JTextField J3=new JTextField();
 	
-	JLabel j4=new JLabel("¸ßÊı:");
+	JLabel j4=new JLabel("é«˜æ•°:");
 	JTextField J4=new JTextField();
 	
-	JLabel j5=new JLabel("Ó¢Óï:");
+	JLabel j5=new JLabel("è‹±è¯­:");
 	JTextField J5=new JTextField();
 	
-	JLabel j6=new JLabel("ÎïÁªÍø:");
+	JLabel j6=new JLabel("ç‰©è”ç½‘:");
 	JTextField J6=new JTextField();
 	
-	JLabel j7=new JLabel("½¡¿µ:");
+	JLabel j7=new JLabel("å¥åº·:");
 	JTextField J7=new JTextField();
 	
 	JLabel j8=new JLabel("Java:");
 	JTextField J8=new JTextField();
 	
-    JButton jb1 =new JButton("Ìí¼Ó");
-    JButton jb2 =new JButton("ÖØÖÃ");
-    JButton jb3 =new JButton("·µ»Ø");
+    JButton jb1 =new JButton("æ·»åŠ ");
+    JButton jb2 =new JButton("é‡ç½®");
+    JButton jb3 =new JButton("è¿”å›");
 	
 	public AddStuCourse(){
 		super();
@@ -67,7 +67,7 @@ public class AddStuCourse extends JFrame implements ActionListener{
 		getLayeredPane().setLayout(null);
 		jpbg.setOpaque(false);
 		
-		 this.setTitle("Ìí¼ÓÑ§Éú³É¼¨");
+		 this.setTitle("æ·»åŠ å­¦ç”Ÿæˆç»©");
 		 this.setLayout(null);
 		 this.setSize(700,540);
 		 this.setResizable(false);
@@ -76,97 +76,97 @@ public class AddStuCourse extends JFrame implements ActionListener{
 		 Container cp = getContentPane();
 		 
 	     j0.setForeground(Color.RED);
-	     j0.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.PLAIN+Font.BOLD,22));
+	     j0.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.PLAIN+Font.BOLD,22));
 	     j0.setBounds(120,30,200,30);
 	     cp.add(j0);
 
-	     J0.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+	     J0.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
 	     J0.setBounds(180,30,200,30);
 	     cp.add(J0);
 	     
 	     j1.setForeground(Color.RED);
-	     j1.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.PLAIN+Font.BOLD,22));
+	     j1.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.PLAIN+Font.BOLD,22));
 	     j1.setBounds(120,80,200,30);
 	     cp.add(j1);
 
-	     J1.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+	     J1.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
 	     J1.setBounds(180,80,200,30);
 	     cp.add(J1);
 	     
 	     j2.setForeground(Color.RED);
-	     j2.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.PLAIN+Font.BOLD,22));
+	     j2.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.PLAIN+Font.BOLD,22));
 	     j2.setBounds(120,130,200,30);
 	     cp.add(j2);
 
-	     J2.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+	     J2.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
 	     J2.setBounds(180,130,200,30);
 	     cp.add(J2);
 	     
 	     j3.setForeground(Color.RED);
-	     j3.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.PLAIN+Font.BOLD,22));
+	     j3.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.PLAIN+Font.BOLD,22));
 	     j3.setBounds(120,180,200,30);
 	     cp.add(j3);
 
-	     J3.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+	     J3.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
 	     J3.setBounds(180,180,200,30);
 	     cp.add(J3);
 	     
 	     j4.setForeground(Color.RED);
-	     j4.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.PLAIN+Font.BOLD,22));
+	     j4.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.PLAIN+Font.BOLD,22));
 	     j4.setBounds(120,230,200,30);
 	     cp.add(j4);
 
-	     J4.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+	     J4.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
 	     J4.setBounds(180,230,200,30);
 	     cp.add(J4);
 	     
 	     j5.setForeground(Color.RED);
-	     j5.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.PLAIN+Font.BOLD,22));
+	     j5.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.PLAIN+Font.BOLD,22));
 	     j5.setBounds(120,280,200,30);
 	     cp.add(j5);
 
-	     J5.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+	     J5.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
 	     J5.setBounds(180,280,200,30);
 	     cp.add(J5);
 	     
 	     j6.setForeground(Color.RED);
-	     j6.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.PLAIN+Font.BOLD,22));
+	     j6.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.PLAIN+Font.BOLD,22));
 	     j6.setBounds(105,330,200,30);
 	     cp.add(j6);
 
-	     J6.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+	     J6.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
 	     J6.setBounds(180,330,200,30);
 	     cp.add(J6);
 	     
 	     j7.setForeground(Color.RED);
-	     j7.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.PLAIN+Font.BOLD,22));
+	     j7.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.PLAIN+Font.BOLD,22));
 	     j7.setBounds(120,380,200,30);
 	     cp.add(j7);
 
-	     J7.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+	     J7.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
 	     J7.setBounds(180,380,200,30);
 	     cp.add(J7);
 		 
 	     j8.setForeground(Color.RED);
-	     j8.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.PLAIN+Font.BOLD,22));
+	     j8.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.PLAIN+Font.BOLD,22));
 	     j8.setBounds(120,430,200,30);
 	     cp.add(j8);
 
-	     J8.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,15));
+	     J8.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,15));
 	     J8.setBounds(180,430,200,30);
 	     cp.add(J8);
 	     
-	     jb1.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,24));
+	     jb1.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,24));
 	     jb1.setBounds(460,60,150,70);
 	     jb1.addActionListener(this);
 	     cp.add(jb1);
 	    
-	     jb2.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,24));
+	     jb2.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,24));
 	     jb2.setBounds(460,210,150,70);
 	     jb2.addActionListener(this);
 	     cp.add(jb2);
 	     
-	     jb3.setFont(new java.awt.Font("Î¢ÈíÑÅºÚ",Font.BOLD,24));
+	     jb3.setFont(new java.awt.Font("å¾®è½¯é›…é»‘",Font.BOLD,24));
 	     jb3.setBounds(460,360,150,70);
 	     jb3.addActionListener(this);
 	     cp.add(jb3);
@@ -174,7 +174,7 @@ public class AddStuCourse extends JFrame implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		if(e.getSource() == jb1){
 			  String q0=J0.getText();
 			  String q1=J1.getText();
@@ -189,11 +189,11 @@ public class AddStuCourse extends JFrame implements ActionListener{
 			  Connect ct = new Connect();
 			  boolean b = ct.addcourses(q0, q1, q2, q3, q4, q5, q6, q7, q8);
 			  if(b == true){
-				  JOptionPane.showMessageDialog(null, "Ìí¼Ó³É¹¦£¡");
+				  JOptionPane.showMessageDialog(null, "æ·»åŠ æˆåŠŸï¼");
 				  setVisible(false);  
 				  new StuCourse().setVisible(true);
 			  }else{
-				  JOptionPane.showMessageDialog(null, "Ìí¼ÓÊ§°Ü£¡");
+				  JOptionPane.showMessageDialog(null, "æ·»åŠ å¤±è´¥ï¼");
 			  }
 		}
 		if(e.getSource() == jb2){

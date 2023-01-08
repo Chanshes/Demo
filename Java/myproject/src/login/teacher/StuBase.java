@@ -26,7 +26,7 @@ import mysql.Connect;
 
 public class StuBase extends JFrame{
 	/**
-	 * ×Ô¶¨Òå±í¸ñ²âÊÔ
+	 * è‡ªå®šä¹‰è¡¨æ ¼æµ‹è¯•
 	 */
 	private static final long serialVersionUID = 1L;
 	
@@ -36,11 +36,11 @@ public class StuBase extends JFrame{
 	DefaultTableModel tableModel;
 	Connect cn = new Connect();
 	Object[][] data = cn.getBase();
-	String[] header =  new String[] { "Ñ§ºÅ", "ĞÕÃû", "ÄêÁä", "ĞÔ±ğ", "Ñ§Ôº", "°à¼¶"};
+	String[] header =  new String[] { "å­¦å·", "å§“å", "å¹´é¾„", "æ€§åˆ«", "å­¦é™¢", "ç­çº§"};
 	
 	public StuBase(){
 		super();
-		this.setTitle("Ñ§ÉúĞÅÏ¢²éÑ¯");
+		this.setTitle("å­¦ç”Ÿä¿¡æ¯æŸ¥è¯¢");
 		this.setSize(700,540);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
@@ -61,76 +61,76 @@ public class StuBase extends JFrame{
 		 Container cp = getContentPane();
 
 		 JLabel lbid = new JLabel();
-		 lbid.setText("Ñ§ºÅ:");
+		 lbid.setText("å­¦å·:");
 		 lbid.setForeground(Color.red);
 		 lbid.setBounds(30,30,80,30);
-		 lbid.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 26));
+		 lbid.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 26));
 		 cp.add(lbid);
 		 
 		 jid = new JTextField();
 		 jid.setBounds(110,30,200,30);
-		 jid.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
+		 jid.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
 		 cp.add(jid);
 		 
 		 JLabel lbna = new JLabel();
-		 lbna.setText("ĞÕÃû:");
-		 lbna.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 26));
+		 lbna.setText("å§“å:");
+		 lbna.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 26));
 		 lbna.setForeground(Color.red);
 		 lbna.setBounds(350,30,80,30);
 		 cp.add(lbna);
 		 
 		 jtn = new JTextField();
 		 jtn.setBounds(430,30,200,30);
-		 jtn.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
+		 jtn.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
 		 cp.add(jtn);
 		 
 		 JLabel lsd = new JLabel();
-		 lsd.setText("Ñ§Ôº:");
-		 lsd.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 26));
+		 lsd.setText("å­¦é™¢:");
+		 lsd.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 26));
 		 lsd.setForeground(Color.red);
 		 lsd.setBounds(30,130,80,30);
 		 cp.add(lsd);
 		 
 		 jsd = new JTextField();
 		 jsd.setBounds(110,130,200,30);
-		 jsd.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
+		 jsd.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
 		 cp.add(jsd);
 
 		 JLabel lba = new JLabel();
-		 lba.setText("ÄêÁä:");
-		 lba.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 26));
+		 lba.setText("å¹´é¾„:");
+		 lba.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 26));
 		 lba.setForeground(Color.red);
 		 lba.setBounds(350,130,80,30);
 		 cp.add(lba);
 		 
 		 jtan = new JTextField();
 		 jtan.setBounds(430,130,200,30);
-		 jtan.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
+		 jtan.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
 		 cp.add(jtan);
 		 
 		 JLabel lbs = new JLabel();
-		 lbs.setText("°à¼¶:");
-		 lbs.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 26));
+		 lbs.setText("ç­çº§:");
+		 lbs.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 26));
 		 lbs.setForeground(Color.red);
 		 lbs.setBounds(30,230,80,30);
 		 cp.add(lbs);
 		 
 		 jtans = new JTextField();
 		 jtans.setBounds(430,230,200,30);
-		 jtans.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
+		 jtans.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
 		 cp.add(jtans);
 		 
 
 		 JLabel lbsx = new JLabel();
-		 lbsx.setText("ĞÔ±ğ:");
-		 lbsx.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 26));
+		 lbsx.setText("æ€§åˆ«:");
+		 lbsx.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 26));
 		 lbsx.setForeground(Color.red);
 		 lbsx.setBounds(350,230,80,30);
 		 cp.add(lbsx);
 		 
 		 jtax = new JTextField();
 		 jtax.setBounds(110,230,200,30);
-		 jtax.setFont(new Font("ËÎÌå", Font.PLAIN, 20));
+		 jtax.setFont(new Font("å®‹ä½“", Font.PLAIN, 20));
 		 cp.add(jtax);
 		 
 		final JScrollPane scrollPane = new JScrollPane();
@@ -141,7 +141,7 @@ public class StuBase extends JFrame{
 		tableModel = new DefaultTableModel(data,header);
 		table = new JTable(tableModel);
 		table.setRowSorter(new TableRowSorter<>(tableModel));
-		scrollPane.setViewportView(table);//´´½¨Ò»¸öÊÓ¿Ú£¬²¢ÔÚÀ¨ºÅÄÚÉèÖÃÆäÊÓÍ¼
+		scrollPane.setViewportView(table);//åˆ›å»ºä¸€ä¸ªè§†å£ï¼Œå¹¶åœ¨æ‹¬å·å†…è®¾ç½®å…¶è§†å›¾
 		
 		TableColumn column = null;
 		column = table.getColumnModel().getColumn(0);
@@ -176,30 +176,30 @@ public class StuBase extends JFrame{
 			}
 		});
 		
-		add = new JButton("Ìí¼ÓÑ§ÉúĞÅÏ¢");
-		add.setFont(new Font("ËÎÌå", Font.PLAIN, 16));
+		add = new JButton("æ·»åŠ å­¦ç”Ÿä¿¡æ¯");
+		add.setFont(new Font("å®‹ä½“", Font.PLAIN, 16));
 		add.setBounds(540,310,140,30);
 		getContentPane().add(add);
 		add.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-				//Ìí¼ÓÑ§ÉúĞÅÏ¢´°Ìå£º
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+				//æ·»åŠ å­¦ç”Ÿä¿¡æ¯çª—ä½“ï¼š
 				setVisible(false);
 				AddStudentBase ad = new AddStudentBase();
 				ad.setVisible(true);
 			}
 		});
 		
-		change = new JButton("ĞŞ¸ÄÑ§ÉúĞÅÏ¢");
-		change.setFont(new Font("ËÎÌå", Font.PLAIN, 16));
+		change = new JButton("ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯");
+		change.setFont(new Font("å®‹ä½“", Font.PLAIN, 16));
 		change.setBounds(540,380,140,30);
 		getContentPane().add(change);
 		change.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-				//ĞŞ¸ÄÑ§ÉúĞÅÏ¢´°Ìå£º
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+				//ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯çª—ä½“ï¼š
 				int selectedRow = table.getSelectedRow();
 				if(selectedRow != -1){
 					Object oid = tableModel.getValueAt(selectedRow, 0);
@@ -208,43 +208,43 @@ public class StuBase extends JFrame{
 					cb.setVisible(true);
 					
 				}else {
-					JOptionPane.showMessageDialog(null, "Äú»¹Ã»ÓĞÑ¡Ôñ£¡");
+					JOptionPane.showMessageDialog(null, "æ‚¨è¿˜æ²¡æœ‰é€‰æ‹©ï¼");
 				}
 			}
 		});
 		
-		delete = new JButton("É¾³ıÑ§ÉúĞÅÏ¢");
-		delete.setFont(new Font("ËÎÌå", Font.PLAIN, 16));
+		delete = new JButton("åˆ é™¤å­¦ç”Ÿä¿¡æ¯");
+		delete.setFont(new Font("å®‹ä½“", Font.PLAIN, 16));
 		delete.setBounds(540,450,140,30);
 		getContentPane().add(delete);
 		delete.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-				//É¾³ıÖ¸¶¨ĞĞµÄÑ§ÉúĞÅÏ¢£º
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+				//åˆ é™¤æŒ‡å®šè¡Œçš„å­¦ç”Ÿä¿¡æ¯ï¼š
 				int selectedRow = table.getSelectedRow();
 				if(selectedRow != -1){
-					int answer1 = JOptionPane.showConfirmDialog(null, "È·¶¨É¾³ı£¿", "É¾³ıÑ§Éú", JOptionPane.YES_NO_OPTION);
+					int answer1 = JOptionPane.showConfirmDialog(null, "ç¡®å®šåˆ é™¤ï¼Ÿ", "åˆ é™¤å­¦ç”Ÿ", JOptionPane.YES_NO_OPTION);
 					if(answer1 == 0){
 						Object oid = tableModel.getValueAt(selectedRow, 0);
 						tableModel.removeRow(selectedRow);
 						cn.deletebase(oid.toString());
-						JOptionPane.showMessageDialog(null, "³É¹¦É¾³ıÑ§ºÅÎª"+oid.toString()+"µÄÍ¬Ñ§£¡");
+						JOptionPane.showMessageDialog(null, "æˆåŠŸåˆ é™¤å­¦å·ä¸º"+oid.toString()+"çš„åŒå­¦ï¼");
 						jid.setText("");
 						jtn.setText("");
 						jtan.setText("");
 						jtans.setText("");
 						jsd.setText("");
 						jtax.setText("");
-						int answer2 = JOptionPane.showConfirmDialog(null, "ÊÇ·ñÍ¬²½É¾³ıÕËºÅÒÔ¼°ĞÅÏ¢£¿", "É¾³ıĞÅÏ¢", JOptionPane.YES_NO_OPTION);
+						int answer2 = JOptionPane.showConfirmDialog(null, "æ˜¯å¦åŒæ­¥åˆ é™¤è´¦å·ä»¥åŠä¿¡æ¯ï¼Ÿ", "åˆ é™¤ä¿¡æ¯", JOptionPane.YES_NO_OPTION);
 						if(answer2 == 0){
 							cn.deleteacount(oid.toString());
 							cn.deletecourse(oid.toString());
-							JOptionPane.showMessageDialog(null, "ÒÑ³É¹¦É¾³ı£¡");
+							JOptionPane.showMessageDialog(null, "å·²æˆåŠŸåˆ é™¤ï¼");
 						}
 					}	
 				}else {
-					JOptionPane.showMessageDialog(null, "Äú»¹Ã»ÓĞÑ¡Ôñ£¡");
+					JOptionPane.showMessageDialog(null, "æ‚¨è¿˜æ²¡æœ‰é€‰æ‹©ï¼");
 				}
 			}
 		});

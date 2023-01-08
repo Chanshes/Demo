@@ -57,7 +57,7 @@ public class MainFrame extends JFrame implements ItemListener, ActionListener{
     JRadioButton rb1, rb2;
     ImageCodePanel imageCode = null;
     
-    int i = 0;//±ê¼Ç±£´æRadioButtonÊÂ¼ş
+    int i = 0;//æ ‡è®°ä¿å­˜RadioButtonäº‹ä»¶
     
     public static void main(String args[]) {
         EventQueue.invokeLater(new Runnable() {
@@ -74,7 +74,7 @@ public class MainFrame extends JFrame implements ItemListener, ActionListener{
     
     public MainFrame() {
         super();
-        setTitle("µÇÂ¼");
+        setTitle("ç™»å½•");
         this.setSize(440,240);
         setResizable(false);
         this.setLocationRelativeTo(null);
@@ -102,30 +102,30 @@ public class MainFrame extends JFrame implements ItemListener, ActionListener{
         button.addActionListener(new ActionListener() {
             public void actionPerformed(final ActionEvent e) {
                 if (imageCode != null) {
-                    imageCode.draw(); // µ÷ÓÃ·½·¨Éú³ÉÑéÖ¤Âë
+                    imageCode.draw(); // è°ƒç”¨æ–¹æ³•ç”ŸæˆéªŒè¯ç 
                 }
             }
         });
-        button.setText("»»Ò»ÕÅ");
+        button.setText("æ¢ä¸€å¼ ");
         button.setBounds(280, 110, 70, 26);
         cp.add(button);
         
         final JLabel label = new JLabel();
-        label.setText("½ÌÎñ¹ÜÀíÏµÍ³");
+        label.setText("æ•™åŠ¡ç®¡ç†ç³»ç»Ÿ");
         label.setBounds(145, 5, 300, 40);
-        label.setFont(new Font("ËÎÌå",Font.BOLD,26));
+        label.setFont(new Font("å®‹ä½“",Font.BOLD,26));
         cp.add(label); 
         
         final JLabel label_1 = new JLabel();
-        label_1.setText("ÓÃ»§Ãû£º");
+        label_1.setText("ç”¨æˆ·åï¼š");
         label_1.setBounds(29, 60, 66, 18);
-        label_1.setFont(new Font("Î¢ÈíÑÅºÚ",Font.PLAIN,15));
+        label_1.setFont(new Font("å¾®è½¯é›…é»‘",Font.PLAIN,15));
         cp.add(label_1);
         
         final JLabel label_2 = new JLabel();
-        label_2.setText("ÃÜ   Âë£º");
+        label_2.setText("å¯†   ç ï¼š");
         label_2.setBounds(29, 85, 66, 18);
-        label_2.setFont(new Font("Î¢ÈíÑÅºÚ",Font.PLAIN,15));
+        label_2.setFont(new Font("å¾®è½¯é›…é»‘",Font.PLAIN,15));
         cp.add(label_2);
         
         nameText = new JTextField();
@@ -138,9 +138,9 @@ public class MainFrame extends JFrame implements ItemListener, ActionListener{
         
         rb1 = new JRadioButton("",true);
         rb2 = new JRadioButton();
-        rb1.setText("Ñ§Éú");
+        rb1.setText("å­¦ç”Ÿ");
         rb1.setBounds(140,140,60,20);
-        rb2.setText("ÀÏÊ¦");
+        rb2.setText("è€å¸ˆ");
         rb2.setBounds(200,140,60,20);
         rb1.setOpaque(false);
         rb2.setOpaque(false);
@@ -159,15 +159,15 @@ public class MainFrame extends JFrame implements ItemListener, ActionListener{
     	   i = 1;
        }
         
-        bo = new JButton("×¢²á");
+        bo = new JButton("æ³¨å†Œ");
         bo.setBounds(220, 163, 100, 28);
         bo.addActionListener(this);
         cp.add(bo);
         
         final JLabel label_3 = new JLabel();
-        label_3.setText("ÑéÖ¤Âë£º");
+        label_3.setText("éªŒè¯ç ï¼š");
         label_3.setBounds(29, 110, 66, 18);
-        label_3.setFont(new Font("Î¢ÈíÑÅºÚ",Font.PLAIN,15));
+        label_3.setFont(new Font("å¾®è½¯é›…é»‘",Font.PLAIN,15));
         cp.add(label_3);
         
         codeText = new JTextField();
@@ -178,32 +178,32 @@ public class MainFrame extends JFrame implements ItemListener, ActionListener{
         button_1.addActionListener(new ActionListener() {
  
 			public void actionPerformed(final ActionEvent e) {
-                 Username =new String(nameText.getText());// ´ÓÎÄ±¾¿òÖĞ»ñÈ¡ÓÃ»§Ãû
-                 Password = new String(pwdText.getPassword());// ´ÓÃÜÂë¿òÖĞ»ñÈ¡ÃÜÂë
-                String code = codeText.getText();// »ñµÃÊäÈëµÄÑéÖ¤Âë
-                String info = "";// ÓÃ»§µÇÂ¼ĞÅÏ¢
-                // ÅĞ¶ÏÓÃ»§ÃûÊÇ·ñÎªnull»ò¿ÕµÄ×Ö·û´®             
+                 Username =new String(nameText.getText());// ä»æ–‡æœ¬æ¡†ä¸­è·å–ç”¨æˆ·å
+                 Password = new String(pwdText.getPassword());// ä»å¯†ç æ¡†ä¸­è·å–å¯†ç 
+                String code = codeText.getText();// è·å¾—è¾“å…¥çš„éªŒè¯ç 
+                String info = "";// ç”¨æˆ·ç™»å½•ä¿¡æ¯
+                // åˆ¤æ–­ç”¨æˆ·åæ˜¯å¦ä¸ºnullæˆ–ç©ºçš„å­—ç¬¦ä¸²             
                 if (Username == null || Username.isEmpty()||Username.length() == 0) {
-                    info = "ÓÃ»§ÃûÎª¿Õ£¡";
+                    info = "ç”¨æˆ·åä¸ºç©ºï¼";
                     imageCode.draw();
                 }
                 
                 else if (Password == null || Password.isEmpty()) {
-                    info = "ÃÜÂëÎª¿Õ£¡";
+                    info = "å¯†ç ä¸ºç©ºï¼";
                     imageCode.draw();
                 }
  
                 else if (code == null || code.isEmpty()) {
-                    info = "ÑéÖ¤ÂëÎª¿Õ£¡";
+                    info = "éªŒè¯ç ä¸ºç©ºï¼";
                     imageCode.draw();
                 }
                
                 else if (!code.equalsIgnoreCase(imageCode.getNum())) {
-                    info = "ÑéÖ¤Âë´íÎó£¡";
+                    info = "éªŒè¯ç é”™è¯¯ï¼";
                     imageCode.draw();
                 }
                 else if (Connect.compare(Username, Password,i)) {
-                    info = "µÇÂ¼³É¹¦!";
+                    info = "ç™»å½•æˆåŠŸ!";
                     setVisible(false);
                     if(i == 0){
                     	Loin lo = new Loin(Username);
@@ -213,13 +213,13 @@ public class MainFrame extends JFrame implements ItemListener, ActionListener{
                     	lo.setVisible(true);
                     }
                 } else {
-                	info = "ÓÃ»§Ãû»òÃÜÂë´íÎó£¡";
+                	info = "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼";
                 	imageCode.draw();
                 }
-                JOptionPane.showMessageDialog(null, info);// Í¨¹ı¶Ô»°¿òµ¯³öÓÃ»§µÇÂ¼ĞÅÏ¢
+                JOptionPane.showMessageDialog(null, info);// é€šè¿‡å¯¹è¯æ¡†å¼¹å‡ºç”¨æˆ·ç™»å½•ä¿¡æ¯
             }
         });
-        button_1.setText("µÇ  Â¼");
+        button_1.setText("ç™»  å½•");
         button_1.setBounds(115, 163, 100, 28);
         cp.add(button_1);
         
@@ -231,16 +231,16 @@ public class MainFrame extends JFrame implements ItemListener, ActionListener{
                 codeText.setText("");
             }
         });
-        button_1_1.setText("ÖØÖÃ");
+        button_1_1.setText("é‡ç½®");
         button_1_1.setBounds(350, 110, 50, 26);
-        button_1_1.setFont(new Font("Î¢ÈíÑÅºÚ",Font.PLAIN,12));
+        button_1_1.setFont(new Font("å¾®è½¯é›…é»‘",Font.PLAIN,12));
         cp.add(button_1_1);
     }
 
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-		//Ñ¡Ôñµ¥Ñ¡°´Å¥¸Ä±ä£¬sqlÓïÑÔÊ¹ÇĞ»»ÀÏÊ¦»òÑ§Éú
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+		//é€‰æ‹©å•é€‰æŒ‰é’®æ”¹å˜ï¼Œsqlè¯­è¨€ä½¿åˆ‡æ¢è€å¸ˆæˆ–å­¦ç”Ÿ
 		if(e.getSource() == rb1){
 			i = 0;
 		}else{
@@ -249,13 +249,13 @@ public class MainFrame extends JFrame implements ItemListener, ActionListener{
 		
 	}
 	public static String getid(){
-		System.out.println("Ñ§ºÅ:"+Username);
+		System.out.println("å­¦å·:"+Username);
 		return Username;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		if(e.getSource() == bo)
 		{
 			this.setVisible(false);
