@@ -1,3 +1,4 @@
+# coding = utf-8
 # Login to the campus network of Chongqing Three Gorges University
 # author: xingchen 21级物联网
 # 备注： 该程序只作为校园网一键登录app，需要提前装好tkinter&win32模块 当然也可联系我直接拿app，我在这里将源码分享
@@ -122,12 +123,14 @@ class App:
         tb1.grid(row=1, column=1)
         tb2.grid(row=1, column=2)
         enter.grid(row=3, column=1)
+    
 
     # 窗口跳转
     def loin(self):
         self.save()
         msbox.showinfo(title='link', message='success')
         os._exit(0)
+        
 
     # 窗口居中
     def center(self):
@@ -292,7 +295,7 @@ if __name__ == '__main__':
 
         he = b + '/help.txt'
         file = open(he, 'w')
-        strhelp = '初次进入时会生成user-agent文件账号密码会保存在这个文件夹中,注意不要删除\n在程序填写保存后再次打开程序即可进行自动登录,若将WiFi和网线选择错误会误报登录成功,需要进入user-agent文件手动将状态码修改为400,保存后打开程序弹出修改用户账号界面'
+        strhelp = str('初次进入时会生成user-agent文件账号密码会保存在这个文件夹中,注意不要删除\n在程序填写保存后再次打开程序即可进行自动登录,若将WiFi和网线选择错误会误报登录成功,需要进入user-agent文件手动将状态码修改为400,保存后打开程序弹出修改用户账号界面')
         file.write(strhelp)
         file.close()
 
