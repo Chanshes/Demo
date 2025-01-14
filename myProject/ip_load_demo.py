@@ -1,7 +1,4 @@
 # coding = utf-8
-# Login to the campus network of Chongqing Three Gorges University
-# author: xingchen 21级物联网
-# 备注： 该程序只作为校园网一键登录app，需要提前装好tkinter&win32模块 当然也可联系我直接拿app，我在这里将源码分享
 
 import tkinter as tk
 import tkinter.messagebox as msbox
@@ -16,12 +13,13 @@ import socket
 class App:
 
     def __init__(self, width=400, height=260):
+        # 初始化用户信息
         self.username = ''
         self.password = ''
         self.mac = ''
         self.s = ''
         self.user = 'username:' + self.username + 'password:' + self.password + 'mac:' + self.mac + 'statu:200select:1'
-        # statu:状态码 当值为200时启动程序直接登录 否则启动修改用户界面
+        # statu:状态码 :200时启动程序直接登录 否则启动修改用户界面
         self.w = width
         self.h = height
         self.title = 'wifi'
@@ -29,16 +27,14 @@ class App:
         self.v = tk.IntVar()
         self.v.set(self.s)
         self.read()
-
+        
+        # 获取网络通道选择状态
         def geten():
             self.username = euser.get()
             self.password = epass.get()
             self.mac = emac.get()
             num = self.v.get()
-            if (num == 1):
-                self.s = '1'
-            else:
-                self.s = '2'
+            self.s = '1' if num == 1 else '2'
             print(self.username)
             print(self.password)
             print(self.mac)
@@ -61,47 +57,19 @@ class App:
         aboutmenu.add_command(label='关于此程序', command=self.aboutApp)
 
         # 定义控件内容
-        lu = tk.Label(frameuser,
-                      text='学号/工号: ',
-                      padx=10,
-                      pady=10,
-                      font=('楷体', 15))
+        lu = tk.Label(frameuser, text='学号/工号: ', padx=10, pady=10, font=('楷体', 15))
         euser = tk.Entry(frameuser)
-        lp = tk.Label(frameuser,
-                      text='密码: ',
-                      padx=10,
-                      pady=10,
-                      font=('楷体', 15))
+        lp = tk.Label(frameuser, text='密码: ', padx=10, pady=10, font=('楷体', 15))
         epass = tk.Entry(frameuser)
-        lm = tk.Label(frameuser,
-                      text='MAC: ',
-                      padx=10,
-                      pady=10,
-                      font=('楷体', 15))
+        lm = tk.Label(frameuser, text='MAC: ', padx=10, pady=10, font=('楷体', 15))
         emac = tk.Entry(frameuser)
 
         group = tk.Label(framein, text='网络通道：', padx=10, pady=10)
-        tb1 = tk.Radiobutton(framein,
-                             text='WiFi',
-                             variable=self.v,
-                             value=1,
-                             width=10,
-                             height=3)
-        tb2 = tk.Radiobutton(framein,
-                             text='网线',
-                             variable=self.v,
-                             value=2,
-                             width=10,
-                             height=3)
-        enter = tk.Button(framein,
-                          text='保存',
-                          relief=tk.RAISED,
-                          width=4,
-                          height=1,
-                          font=('楷体', 12),
-                          fg='Purple',
-                          command=geten)
-        if (self.s == '1'):
+        tb1 = tk.Radiobutton(framein, text='WiFi', variable=self.v, value=1, width=10, height=3)
+        tb2 = tk.Radiobutton(framein, text='网线', variable=self.v, value=2, width=10, height=3)
+        enter = tk.Button(framein, text='保存', relief=tk.RAISED, width=4, height=1, font=('楷体', 12), fg='Purple', command=geten,)
+
+        if self.s == '1':
             tb1.select()
         else:
             tb2.select()
@@ -128,15 +96,15 @@ class App:
     # 窗口跳转
     def loin(self):
         self.save()
-        msbox.showinfo(title='link', message='success')
         os._exit(0)
         
 
     # 窗口居中
     def center(self):
-
+        # 获取屏幕宽高
         ws = self.root.winfo_screenwidth()
         hs = self.root.winfo_screenheight()
+        # 计算窗口位置
         x = int((ws / 2) - (self.w / 2))
         y = int((hs / 2) - (self.h / 2))
         self.root.geometry('{}x{}+{}+{}'.format(self.w, self.h, x, y))
@@ -185,7 +153,7 @@ class App:
     def authorWord(self):
         msbox.showinfo(
             title='作者的话',
-            message='该程序只作为校园网一键登录app，我在Github将源码分享 ---Github:https://github.com/Chanshes/Demo/tree/main/myProject'
+            message='该程序只作为校园网一键登录app ---Github:https://github.com/Chanshes/Demo/tree/main/myProject'
         )
 
     def aboutApp(self):
@@ -196,15 +164,18 @@ class App:
 
 
 def get_ip():
+    # 获取本机IP地址
     hostname = socket.gethostname()
     ip = socket.gethostbyname(hostname)
     return ip
 
 
 def link(username, password, mac, select):
+    # 构建登录请求URL
     login_IP = 'http://172.22.0.13/webauth.do?wlanuserip=' + get_ip() + \
             '&wlanacname=NFV-VBRAS-0' + select + '&mac=' + mac + '&vlan=1056&rand=14bb62975092b4&url=http://edge.microsoft.com/generate_20'
 
+    # 构建登录请求数据
     dat = 'loginType=&auth_type=0&isBindMac1=1&pageid=61&templatetype=1&listbindmac=1&recordmac=0&isRemind=0' \
         '&loginTimes=&groupId=&distoken=&echostr=&url=http://edge.microsoft.com/generate_20&isautoauth=&userId=' + \
         username + '&passwd=' + password
@@ -238,10 +209,12 @@ def link(username, password, mac, select):
     }
 
     try:
+        # 发送登录请求
         r = requests.post(login_IP, data=dat, headers=headers)
         r.encoding = r.apparent_encoding
         req = r.text
     finally:
+        # 处理登录响应
         if "此IP已在线请下线后再认证" in req:
             ToastNotifier().show_toast(title="该设备已经登录",
                                        msg="校园网状态",
@@ -316,7 +289,7 @@ if __name__ == '__main__':
         select = r.group(5)
         f.close()
 
-    if (statu == '200'):
+    if statu == '200':
         link(username, password, mac, select)
     else:
         app = App()
